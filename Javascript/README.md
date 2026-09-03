@@ -1,6 +1,20 @@
 # ⚡ JavaScript Training & Practice Repository
 
-Full Stack Web Development Training Program ke liye JavaScript practical tests, algorithms aur hands-on exercises ka organized collection.
+This folder contains a complete, progressive JavaScript curriculum mapping each student's journey from language fundamentals, variables, data types, operators, and control flow to functions, arrays, objects, DOM manipulation, event handling, ES6+ features, asynchronous JavaScript, Promises, Fetch API, and error handling.
+
+---
+
+## 🌟 Structured Student Learning Curriculum: [`Structured_Modules/`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules)
+
+| Module | Directory | Topics Covered | Key Demo / Script |
+|--------|-----------|----------------|-------------------|
+| **01** | [`01_Fundamentals_Variables_DataTypes`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/01_Fundamentals_Variables_DataTypes) | `let`, `const`, `var`, block scope, TDZ, 7 primitives, `typeof`, strict equality (`===`), `??` vs `\|\|` | [`index.js`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/01_Fundamentals_Variables_DataTypes/index.js) |
+| **02** | [`02_Control_Flow_Conditions_Loops`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/02_Control_Flow_Conditions_Loops) | `if-else` ladders, ternary, `switch-case`, prime number loop, `for...of` (arrays), `for...in` (objects) | [`index.js`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/02_Control_Flow_Conditions_Loops/index.js) |
+| **03** | [`03_Functions_Scopes_Closures`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/03_Functions_Scopes_Closures) | Declarations, arrow functions, rest params (`...numbers`), higher-order functions, private closures | [`index.js`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/03_Functions_Scopes_Closures/index.js) |
+| **04** | [`04_Arrays_and_Objects_Mastery`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/04_Arrays_and_Objects_Mastery) | `map()`, `filter()`, `reduce()`, `find()`, `every()`, `some()`, `Object.entries()`, `Object.freeze()` | [`index.js`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/04_Arrays_and_Objects_Mastery/index.js) |
+| **05** | [`05_DOM_Manipulation_and_Events`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/05_DOM_Manipulation_and_Events) | Dynamic DOM nodes (`createElement`), real-time character/word counter, event delegation on `#taskList` | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/05_DOM_Manipulation_and_Events/index.html) |
+| **06** | [`06_ES6_Plus_Modern_Features`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/06_ES6_Plus_Modern_Features) | Destructuring, spread (`...`), optional chaining (`?.`), ES6 class inheritance (`extends`, `super`) | [`index.js`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/06_ES6_Plus_Modern_Features/index.js) |
+| **07** | [`07_Async_Promises_Fetch_ErrorHandling`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/07_Async_Promises_Fetch_ErrorHandling) | Asynchronous Fetch API, `async`/`await`, concurrency with `Promise.all()`, graceful UI `try...catch` | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules/07_Async_Promises_Fetch_ErrorHandling/index.html) |
 
 ---
 

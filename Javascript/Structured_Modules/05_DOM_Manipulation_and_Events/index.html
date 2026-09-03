@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 05: DOM Manipulation & Event Handling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f8fafc; padding: 2.5rem 1rem; line-height: 1.6; }
+        .container { max-width: 750px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        header { text-align: center; }
+        h1 { color: #38bdf8; font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { color: #94a3b8; }
+        
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.75rem; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        h2 { font-size: 1.25rem; color: #818cf8; margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+        
+        /* Input & Button Styles */
+        .input-row { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
+        input[type="text"] {
+            flex: 1;
+            background: #0f172a;
+            border: 1px solid #475569;
+            color: #f8fafc;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        input:focus { border-color: #38bdf8; }
+        
+        .btn {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            border: none;
+            color: #0f172a;
+            font-weight: 700;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.9; }
+
+        /* Dynamic Item List */
+        .item-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+        .list-item {
+            background: #0f172a;
+            border: 1px solid #334155;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .list-item.completed { text-decoration: line-through; color: #64748b; border-color: #1e293b; }
+        
+        .btn-delete {
+            background: rgba(244, 63, 94, 0.2);
+            color: #f43f5e;
+            border: 1px solid rgba(244, 63, 94, 0.4);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+        .btn-delete:hover { background: #f43f5e; color: white; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Live Character Counter */
+        .counter-badge { font-size: 0.85rem; color: #38bdf8; font-weight: 600; margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span style="display:inline-block; padding:0.25rem 0.75rem; background:rgba(56,189,248,0.15); color:#38bdf8; border-radius:9999px; font-size:0.85rem; font-weight:600; margin-bottom:0.5rem;">Module 05</span>
+            <h1>DOM Manipulation &amp; Event Architecture</h1>
+            <p class="subtitle">Demonstrating createElement, event listeners, live input binding, and event delegation patterns.</p>
+        </header>
+
+        <!-- 1. DYNAMIC TASK CREATION & EVENT DELEGATION -->
+        <div class="card">
+            <h2>1. Dynamic DOM Nodes &amp; Event Delegation</h2>
+            <div class="input-row">
+                <input type="text" id="taskInput" placeholder="Enter task (e.g. Master Promise.all)...">
+                <button class="btn" id="addBtn">Add Task</button>
+            </div>
+            
+            <p style="color: #94a3b8; font-size: 0.85rem;">Tip: Click task text to toggle completion, click delete to remove (Single parent listener handles all clicks!)</p>
+            
+            <ul class="item-list" id="taskList">
+                <li class="list-item" data-id="1">
+                    <span class="task-text">Understand JavaScript Event Loop</span>
+                    <button class="btn-delete">Delete</button>
+                </li>
+                <li class="list-item" data-id="2">
+                    <span class="task-text">Practice Event Delegation &amp; Bubbling</span>
+                    <button class="btn-delete">Delete</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 2. LIVE INPUT SENSOR -->
+        <div class="card">
+            <h2>2. Live Input Event &amp; DOM Reflection</h2>
+            <input type="text" id="sensorInput" placeholder="Type anything to see real-time DOM reflection...">
+            <div class="counter-badge" id="counterDisplay">Characters: 0 | Words: 0</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

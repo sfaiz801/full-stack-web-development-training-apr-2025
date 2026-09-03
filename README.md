@@ -88,7 +88,19 @@ full-stack-web-development-training-apr-2024/
   6. `06_Custom_Bootstrap_Theming`: Overriding default Bootstrap Sass maps and CSS custom properties (`--bs-primary`, `--bs-border-radius`) for custom brand identity.
 * 5 complete standalone web apps (Admin Dashboard Layout, E-commerce Product Page, SaaS Pricing Table, Interactive Auth Form, Portfolio Landing Page).
 
-### 5. 🐍 [Python](file:///d:/full-stack-web-development-training-apr-2024/Python)
+### 5. ⚡ [JavaScript](file:///d:/full-stack-web-development-training-apr-2024/Javascript)
+* **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/Javascript/Structured_Modules)**: Comprehensive student learning journey across 7 core modules:
+  1. `01_Fundamentals_Variables_DataTypes`: `let`, `const`, `var`, block scope, TDZ, 7 primitives, `typeof`, strict equality (`===`), `??` vs `||`.
+  2. `02_Control_Flow_Conditions_Loops`: `if-else` decision ladders, ternary, `switch-case`, prime loops, `for...of` (arrays), `for...in` (objects).
+  3. `03_Functions_Scopes_Closures`: Arrow functions, rest params (`...args`), higher-order functions, private closures, and lexical scope.
+  4. `04_Arrays_and_Objects_Mastery`: Functional transforms (`map`, `filter`, `reduce`), `find`, `every`, `some`, `Object.entries()`, `Object.freeze()`.
+  5. `05_DOM_Manipulation_and_Events`: Dynamic DOM nodes (`createElement`), real-time character/word counter, event delegation on `#taskList`.
+  6. `06_ES6_Plus_Modern_Features`: Destructuring, spread (`...`), optional chaining (`?.`), ES6 class inheritance (`extends`, `super`).
+  7. `07_Async_Promises_Fetch_ErrorHandling`: Asynchronous Fetch API, `async`/`await`, concurrency with `Promise.all()`, graceful UI `try...catch` boundaries.
+* **[practice_tasks](file:///d:/full-stack-web-development-training-apr-2024/Javascript/practice_tasks)**: 6 interactive DOM & algorithm utilities (Higher-Order Functions, Debounce search, Async Quotes, Regex Form Validator, LocalStorage Notes, Algorithm Utilities).
+* **[JavaScript_Test_01](file:///d:/full-stack-web-development-training-apr-2024/Javascript/JavaScript_Test_01)**: Official assessment tasks (QuadHex loops, Prime summation, Interactive counter, and Promise-based data table).
+
+### 6. 🐍 [Python](file:///d:/full-stack-web-development-training-apr-2024/Python)
 * **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules)**: Comprehensive student learning journey across 9 core modules:
   1. `01_Fundamentals_Variables_DataTypes`: Dynamic typing, primitive data types, typecasting, f-strings.
   2. `02_Operators`: Arithmetic, relational, logical, identity (`is`), membership (`in`), bitwise.
@@ -102,7 +114,7 @@ full-stack-web-development-training-apr-2024/
 * **[restaurant](file:///d:/full-stack-web-development-training-apr-2024/Python/restaurant)**: Red Heaven Restaurant Management System with multi-role access control (Admin, Staff, Customer), order management, billing, and reservation booking.
 * **[Tasks](file:///d:/full-stack-web-development-training-apr-2024/Python/Tasks)**: 25 modular Python programs ranging from Student & Bank Management Systems, ATM Simulators, and Hotel/Medical Billing to Interactive Games and File Analyzers.
 
-### 6. ⚡ [API, Database & Cloud](file:///d:/full-stack-web-development-training-apr-2024/API%2CDatabase%20&%20Cloud)
+### 7. ⚡ [API, Database & Cloud](file:///d:/full-stack-web-development-training-apr-2024/API%2CDatabase%20&%20Cloud)
 * **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/API%2CDatabase%20&%20Cloud/Structured_Modules)**: Comprehensive student learning journey across 6 core modules:
   1. `01_API_Fundamentals_and_HTTP`: HTTP verbs (GET, POST, PUT, PATCH, DELETE), status codes (200, 201, 204, 404, 422), and REST architectural constraints.
   2. `02_FastAPI_Request_Validation`: Pydantic v2 schemas, `Field` boundaries, custom `@field_validator`, and automatic HTTP 422 handling.
@@ -114,7 +126,7 @@ full-stack-web-development-training-apr-2024/
 * **`Database/`**: Production SQL schema (`01_schema.sql`), seed data (`02_sample_data.sql`), and advanced queries/stored procedures for PostgreSQL, MySQL, and AWS RDS.
 * **`Cloud/`**: Firebase Authentication setup and token verification guide connecting React/Next.js frontend with FastAPI backend.
 
-### 7. 💻 [C Language](file:///d:/full-stack-web-development-training-apr-2024/C%20Language)
+### 8. 💻 [C Language](file:///d:/full-stack-web-development-training-apr-2024/C%20Language)
 * **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/C%20Language/Structured_Modules)**: Progressive curriculum mapping each student's journey:
   1. `01_Fundamentals_Variables_DataTypes`: Basic syntax, primitive data types, input/output (`printf`/`scanf`), constants & typecasting.
   2. `02_Operators`: Arithmetic, relational, logical, bitwise operations (`&`, `|`, `^`, shifts), and ternary operators.
