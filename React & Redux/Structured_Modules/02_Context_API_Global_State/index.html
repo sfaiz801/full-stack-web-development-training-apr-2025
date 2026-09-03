@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 02: Context API & Global State Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- React 18 & Babel Standalone -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0b0f19; color: #f8fafc; padding: 2.5rem 1rem; line-height: 1.6; transition: background 0.3s, color 0.3s; }
+        body.light-theme { background: #f1f5f9; color: #0f172a; }
+        .container { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        header { text-align: center; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(56,189,248,0.15); color: #38bdf8; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+        h1 { color: #38bdf8; font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { color: #94a3b8; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.75rem; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        body.light-theme .card { background: #ffffff; border-color: #cbd5e1; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        h2 { font-size: 1.25rem; color: #818cf8; margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+        body.light-theme h2 { border-bottom-color: #e2e8f0; }
+        .btn { background: linear-gradient(135deg, #38bdf8, #818cf8); border: none; color: #0b0f19; font-weight: 700; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; transition: transform 0.2s; margin-right: 0.5rem; }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-danger { background: linear-gradient(135deg, #f43f5e, #fb7185); color: #ffffff; }
+        .user-pill { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.8rem; background: #0f172a; border-radius: 9999px; border: 1px solid #475569; font-size: 0.85rem; }
+        body.light-theme .user-pill { background: #e2e8f0; border-color: #cbd5e1; color: #0f172a; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { createContext, useContext, useState, useEffect } = React;
+
+        // 1. ThemeContext Definition & Provider
+        const ThemeContext = createContext();
+        function ThemeProvider({ children }) {
+            const [theme, setTheme] = useState('dark');
+            const toggleTheme = () => setTheme(t => (t === 'dark' ? 'light' : 'dark'));
+
+            useEffect(() => {
+                document.body.className = theme === 'light' ? 'light-theme' : '';
+            }, [theme]);
+
+            return (
+                <ThemeContext.Provider value={{ theme, toggleTheme }}>
+                    {children}
+                </ThemeContext.Provider>
+            );
+        }
+        const useTheme = () => useContext(ThemeContext);
+
+        // 2. AuthContext Definition & Provider
+        const AuthContext = createContext();
+        function AuthProvider({ children }) {
+            const [user, setUser] = useState({
+                isAuthenticated: true,
+                name: "Mohammad Faiz",
+                role: "Full Stack Engineer",
+                email: "faiz@indixpert.com"
+            });
+
+            const login = () => setUser({
+                isAuthenticated: true,
+                name: "Mohammad Faiz",
+                role: "Full Stack Engineer",
+                email: "faiz@indixpert.com"
+            });
+
+            const logout = () => setUser(null);
+
+            return (
+                <AuthContext.Provider value={{ user, login, logout }}>
+                    {children}
+                </AuthContext.Provider>
+            );
+        }
+        const useAuth = () => useContext(AuthContext);
+
+        // 3. Deeply Nested Component accessing context directly without prop-drilling
+        function DeeplyNestedDashboardHeader() {
+            const { theme, toggleTheme } = useTheme();
+            const { user, login, logout } = useAuth();
+
+            return (
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                    <div>
+                        {user ? (
+                            <div className="user-pill">
+                                <span>🟢</span>
+                                <strong>{user.name}</strong> ({user.role})
+                            </div>
+                        ) : (
+                            <span style={{ color: '#f43f5e', fontSize: '0.9rem' }}>🔒 Session Logged Out</span>
+                        )}
+                    </div>
+
+                    <div>
+                        <button className="btn" onClick={toggleTheme}>
+                            Toggle Theme ({theme.toUpperCase()})
+                        </button>
+                        {user ? (
+                            <button className="btn btn-danger" onClick={logout}>Log Out</button>
+                        ) : (
+                            <button className="btn" onClick={login}>Log In (Faiz)</button>
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        // 4. Nested Component Level 2
+        function MiddleLevelWidget() {
+            return (
+                <div style={{ padding: '1rem', background: 'rgba(56,189,248,0.05)', borderRadius: '8px', border: '1px dashed #38bdf8' }}>
+                    <p style={{ fontSize: '0.85rem', color: '#94a3b8', marginBottom: '0.5rem' }}>
+                        Middle Component (Notice: zero props were passed down through this hierarchy!)
+                    </p>
+                    <DeeplyNestedDashboardHeader />
+                </div>
+            );
+        }
+
+        function App() {
+            return (
+                <ThemeProvider>
+                    <AuthProvider>
+                        <div className="container">
+                            <header>
+                                <span className="badge">Module 02</span>
+                                <h1>Context API &amp; Global State Architecture</h1>
+                                <p className="subtitle">Managing shared global state (Theme &amp; User Authentication) across component hierarchies without prop-drilling.</p>
+                            </header>
+
+                            <div className="card">
+                                <h2>Direct Context Consumption in Deep Child</h2>
+                                <MiddleLevelWidget />
+                            </div>
+
+                            <div className="card">
+                                <h2>Why Context API?</h2>
+                                <ul style={{ paddingLeft: '1.25rem', color: '#94a3b8', fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                                    <li><strong>Eliminates Prop Drilling:</strong> Deeply nested components access state directly via <code>useContext()</code>.</li>
+                                    <li><strong>Modular Providers:</strong> Separate domains (Theme, Auth, Language) into dedicated Providers.</li>
+                                    <li><strong>Custom Context Hooks:</strong> Encapsulates context access with safety checks (e.g., <code>useAuth()</code>, <code>useTheme()</code>).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </AuthProvider>
+                </ThemeProvider>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

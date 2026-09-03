@@ -60,6 +60,13 @@ full-stack-web-development-training-apr-2024/
 * **[tasks](file:///d:/full-stack-web-development-training-apr-2024/Next.js/tasks)**: Next.js 14/15 App Router assignments and component patterns.
 
 ### 2. ⚛️ [React & Redux](file:///d:/full-stack-web-development-training-apr-2024/React%20&%20Redux)
+* **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/React%20&%20Redux/Structured_Modules)**: Comprehensive student learning journey across 6 core modules:
+  1. `01_React_Fundamentals_and_Hooks`: Functional components, JSX, props composition, `useState`, `useEffect` lifecycle cleanup, and `useRef` direct DOM focus.
+  2. `02_Context_API_Global_State`: `createContext`, `ThemeProvider`, `AuthProvider`, custom hooks (`useAuth`, `useTheme`), eliminating prop-drilling.
+  3. `03_Redux_Toolkit_Core`: Single source of truth, `createSlice`, `configureStore`, Immer draft mutation, `useDispatch`, `useSelector`, live store inspector.
+  4. `04_Redux_Selectors_Middleware_AsyncThunk`: `createAsyncThunk` API lifecycle (`pending`, `fulfilled`, `rejected`), custom action logging middleware, Reselect memoized selectors.
+  5. `05_React_Router_Navigation`: Declarative SPA routing, active `NavLink` styles, dynamic URL parameters (`useParams`), `useNavigate`, 404 fallback.
+  6. `06_Performance_Optimization`: Render shielding with `React.memo`, callback reference stabilization with `useCallback`, heavy computation caching with `useMemo`.
 * **[01_react_bootstrap_ui_dashboard](file:///d:/full-stack-web-development-training-apr-2024/React%20&%20Redux/01_react_bootstrap_ui_dashboard)**: React 19 + React-Bootstrap 5 suite with 21 interactive UI component showcases.
 * **[02_redux_toolkit_mastery_hub](file:///d:/full-stack-web-development-training-apr-2024/React%20&%20Redux/02_redux_toolkit_mastery_hub)**: 6 comprehensive Redux Toolkit slices (Counter, Todos, Shopping Cart, Auth Session, Async Thunk API Posts, Budget Ledger) with an in-browser Live Store State Inspector.
 
