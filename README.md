@@ -93,7 +93,14 @@ full-stack-web-development-training-apr-2024/
 * **[Tasks](file:///d:/full-stack-web-development-training-apr-2024/Python/Tasks)**: 25 modular Python programs ranging from Student & Bank Management Systems, ATM Simulators, and Hotel/Medical Billing to Interactive Games and File Analyzers.
 
 ### 5. ⚡ [API, Database & Cloud](file:///d:/full-stack-web-development-training-apr-2024/API%2CDatabase%20&%20Cloud)
-* **`API/`**: Production-ready FastAPI repository (`backend-training-indixpert-faiz`) on branch `faiz` with profile routes, JWT & Firebase token verification.
+* **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/API%2CDatabase%20&%20Cloud/Structured_Modules)**: Comprehensive student learning journey across 6 core modules:
+  1. `01_API_Fundamentals_and_HTTP`: HTTP verbs (GET, POST, PUT, PATCH, DELETE), status codes (200, 201, 204, 404, 422), and REST architectural constraints.
+  2. `02_FastAPI_Request_Validation`: Pydantic v2 schemas, `Field` boundaries, custom `@field_validator`, and automatic HTTP 422 handling.
+  3. `03_Authentication_and_Security`: Password hashing, JWT token signing/decoding, OAuth2 Bearer security, RBAC (Admin vs Student), and Firebase Auth.
+  4. `04_CRUD_Operations_and_Routers`: Modular APIRouters, response models, query filtering, pagination, and full CRUD workflows.
+  5. `05_Database_SQL_and_Modeling`: Relational data modeling, SQLAlchemy ORM (1:1 and 1:N relations), foreign keys, transactions, and SQL queries.
+  6. `06_Cloud_Config_Security_and_Monitoring`: 12-factor `.env` configuration, CORS middleware, Cloud `/health` probes, structured logging, and latency tracking headers.
+* **`API/`**: Production-ready FastAPI repository (`backend-training-indixpert-faiz`) on branch `faiz` and standalone Task CRUD API.
 * **`Database/`**: Production SQL schema (`01_schema.sql`), seed data (`02_sample_data.sql`), and advanced queries/stored procedures for PostgreSQL, MySQL, and AWS RDS.
 * **`Cloud/`**: Firebase Authentication setup and token verification guide connecting React/Next.js frontend with FastAPI backend.
 
