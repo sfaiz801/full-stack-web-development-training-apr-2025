@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Testimonial Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #090e17;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #ffffff;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .badge-pill {
+            color: #ec4899;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .title {
+            font-size: 2.3rem;
+            font-weight: 800;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .test-card {
+            background: rgba(22, 28, 45, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .test-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(236, 72, 153, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.05);
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 4px;
+        }
+
+        .review-text {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 18px;
+        }
+
+        .avatar-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .author-name {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .author-role {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section-header">
+        <span class="badge-pill">Testimonials</span>
+        <h2 class="title">Loved by Developers Worldwide</h2>
+    </div>
+
+    <div class="testimonials-grid">
+        <div class="test-card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "This codebase has drastically elevated our frontend delivery speeds. The glassmorphism and modern UI components are exceptionally polished!"
+                </p>
+            </div>
+            <div class="author-info">
+                <div class="avatar-circle">AS</div>
+                <div>
+                    <h4 class="author-name">Aarav Sharma</h4>
+                    <p class="author-role">Lead Frontend Engineer at TechCorp</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "The clean semantic structure and beautiful gradient palettes make learning web development fun and super intuitive."
+                </p>
+            </div>
+            <div class="author-info">
+                <div class="avatar-circle" style="background: linear-gradient(135deg, #10b981, #3b82f6);">SK</div>
+                <div>
+                    <h4 class="author-name">Sara Khan</h4>
+                    <p class="author-role">Product Designer & Developer</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-card">
+            <i class="fa-solid fa-quote-right quote-icon"></i>
+            <div>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="review-text">
+                    "Perfect collection of practice tasks! Everything works out of the box with zero external build overhead. Highly recommended."
+                </p>
+            </div>
+            <div class="author-info">
+                <div class="avatar-circle" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">RP</div>
+                <div>
+                    <h4 class="author-name">Rohan Patel</h4>
+                    <p class="author-role">Full Stack Consultant</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

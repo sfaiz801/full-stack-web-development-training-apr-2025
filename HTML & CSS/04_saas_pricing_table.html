@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern SaaS Pricing Table</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #090e17;
+            color: #ffffff;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-section {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 45px;
+        }
+
+        .section-tag {
+            color: #818cf8;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 14px;
+            background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 30px auto 0;
+            width: fit-content;
+        }
+
+        .toggle-label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            cursor: pointer;
+        }
+
+        .toggle-label.active {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 46px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            inset: 0;
+            background-color: #374151;
+            transition: 0.3s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #6366f1;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(22px);
+        }
+
+        .discount-pill {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+        }
+
+        /* Pricing Cards Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .price-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 35px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .price-card.popular {
+            background: rgba(30, 27, 75, 0.6);
+            border: 2px solid #6366f1;
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.25);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .card-plan {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .card-desc {
+            color: #94a3b8;
+            font-size: 0.88rem;
+            margin-bottom: 24px;
+            min-height: 42px;
+        }
+
+        .price-box {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            margin-bottom: 30px;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #94a3b8;
+        }
+
+        .amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .period {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 35px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .features-list li i {
+            color: #10b981;
+            font-size: 0.95rem;
+        }
+
+        .features-list li.disabled {
+            color: #64748b;
+            text-decoration: line-through;
+        }
+
+        .features-list li.disabled i {
+            color: #475569;
+        }
+
+        .plan-btn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-highlight {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+        }
+
+        .btn-highlight:hover {
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <span class="section-tag">Flexible Pricing</span>
+        <h1 class="main-title">Pick the Perfect Plan for Your Needs</h1>
+        <p class="subtitle">Start small and upgrade anytime as your business and code scales.</p>
+
+        <div class="toggle-container">
+            <span class="toggle-label active" id="monthly-label">Monthly</span>
+            <label class="switch">
+                <input type="checkbox" id="billing-toggle" onchange="toggleBilling()">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label" id="yearly-label">Yearly</span>
+            <span class="discount-pill">Save 20%</span>
+        </div>
+    </div>
+
+    <div class="pricing-grid">
+        <!-- Starter Plan -->
+        <div class="price-card">
+            <h3 class="card-plan">Starter</h3>
+            <p class="card-desc">Ideal for students, beginners, and small personal hobby projects.</p>
+            <div class="price-box">
+                <span class="currency">$</span>
+                <span class="amount" id="price-starter">0</span>
+                <span class="period">/month</span>
+            </div>
+            <ul class="features-list">
+                <li><i class="fa-solid fa-check"></i> Up to 3 Active Projects</li>
+                <li><i class="fa-solid fa-check"></i> Basic Analytics Dashboard</li>
+                <li><i class="fa-solid fa-check"></i> Community Support</li>
+                <li class="disabled"><i class="fa-solid fa-xmark"></i> Custom Domain Support</li>
+                <li class="disabled"><i class="fa-solid fa-xmark"></i> Automated Backups</li>
+            </ul>
+            <button class="plan-btn btn-outline">Get Started Free</button>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="price-card popular">
+            <div class="popular-badge">Most Popular</div>
+            <h3 class="card-plan">Professional</h3>
+            <p class="card-desc">Best for freelance developers, indie hackers, and growing startups.</p>
+            <div class="price-box">
+                <span class="currency">$</span>
+                <span class="amount" id="price-pro">29</span>
+                <span class="period">/month</span>
+            </div>
+            <ul class="features-list">
+                <li><i class="fa-solid fa-check"></i> Unlimited Active Projects</li>
+                <li><i class="fa-solid fa-check"></i> Real-time Analytics & Logs</li>
+                <li><i class="fa-solid fa-check"></i> Custom Domain & SSL</li>
+                <li><i class="fa-solid fa-check"></i> Daily Cloud Backups</li>
+                <li><i class="fa-solid fa-check"></i> Priority Email Support</li>
+            </ul>
+            <button class="plan-btn btn-highlight">Start 14-Day Free Trial</button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="price-card">
+            <h3 class="card-plan">Enterprise</h3>
+            <p class="card-desc">Dedicated server performance, 99.99% uptime SLA and 24/7 VIP support.</p>
+            <div class="price-box">
+                <span class="currency">$</span>
+                <span class="amount" id="price-ent">79</span>
+                <span class="period">/month</span>
+            </div>
+            <ul class="features-list">
+                <li><i class="fa-solid fa-check"></i> Everything in Professional</li>
+                <li><i class="fa-solid fa-check"></i> Dedicated Cloud Infrastructure</li>
+                <li><i class="fa-solid fa-check"></i> Unlimited Team Members</li>
+                <li><i class="fa-solid fa-check"></i> 99.99% Uptime SLA</li>
+                <li><i class="fa-solid fa-check"></i> 24/7 Dedicated Account Manager</li>
+            </ul>
+            <button class="plan-btn btn-outline">Contact Sales</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleBilling() {
+            const isYearly = document.getElementById('billing-toggle').checked;
+            document.getElementById('monthly-label').classList.toggle('active', !isYearly);
+            document.getElementById('yearly-label').classList.toggle('active', isYearly);
+
+            document.getElementById('price-starter').innerText = "0";
+            document.getElementById('price-pro').innerText = isYearly ? "23" : "29";
+            document.getElementById('price-ent').innerText = isYearly ? "63" : "79";
+        }
+    </script>
+</body>
+</html>

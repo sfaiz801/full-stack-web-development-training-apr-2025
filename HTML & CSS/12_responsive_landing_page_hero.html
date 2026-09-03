@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern SaaS Landing Page Hero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: #090e17;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 60px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 22px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: #cbd5e1;
+        }
+        .btn-ghost:hover {
+            color: #ffffff;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Hero Content */
+        .hero-section {
+            max-width: 1000px;
+            margin: 60px auto 40px;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #818cf8;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 22px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #ec4899 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            color: #94a3b8;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 50px;
+        }
+
+        .btn-large {
+            padding: 15px 32px;
+            font-size: 1rem;
+            border-radius: 14px;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-strip {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 24px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .stat-col h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .stat-col p {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-cube"></i></div>
+            <span>NovaPulse</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Docs</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="#" class="btn btn-ghost">Sign In</a>
+            <a href="#" class="btn btn-primary">Get Started</a>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <div class="hero-pill">
+            <i class="fa-solid fa-sparkles"></i> Antigravity v2.0 Engine Released
+        </div>
+        <h1 class="hero-title">
+            Build, Deploy & Scale <br>
+            <span class="gradient-text">Full-Stack Web Apps</span> at Light Speed
+        </h1>
+        <p class="hero-desc">
+            The next-generation cloud developer platform with automated continuous integration, instant preview environments, and enterprise-grade security out of the box.
+        </p>
+
+        <div class="hero-cta-group">
+            <button class="btn btn-primary btn-large"><i class="fa-solid fa-arrow-right"></i> Start Free Project</button>
+            <button class="btn btn-secondary btn-large"><i class="fa-solid fa-play"></i> Watch 2-Min Demo</button>
+        </div>
+
+        <div class="stats-strip">
+            <div class="stat-col">
+                <h3>99.99%</h3>
+                <p>Global Uptime</p>
+            </div>
+            <div class="stat-col">
+                <h3>100K+</h3>
+                <p>Developers Active</p>
+            </div>
+            <div class="stat-col">
+                <h3>15ms</h3>
+                <p>Edge Response Latency</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

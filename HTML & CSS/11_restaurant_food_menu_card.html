@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Restaurant Menu Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0d1117;
+            padding: 40px 20px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu-wrapper {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .menu-subtitle {
+            color: #f59e0b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .menu-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-top: 6px;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .cat-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .cat-btn.active, .cat-btn:hover {
+            background: #f59e0b;
+            color: #000000;
+            border-color: #f59e0b;
+            font-weight: 700;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 20px;
+        }
+
+        .food-card {
+            background: rgba(22, 27, 34, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+
+        .food-icon-box {
+            width: 75px;
+            height: 75px;
+            border-radius: 16px;
+            background: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .food-info {
+            flex: 1;
+        }
+
+        .food-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .food-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .food-price {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
+        .food-desc {
+            color: #8b949e;
+            font-size: 0.82rem;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .food-rating {
+            font-size: 0.78rem;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-wrapper">
+        <div class="menu-header">
+            <span class="menu-subtitle">Delicious & Fresh</span>
+            <h1 class="menu-title">Our Specialty Menu</h1>
+        </div>
+
+        <div class="category-tabs">
+            <button class="cat-btn active">All Items</button>
+            <button class="cat-btn">Main Course</button>
+            <button class="cat-btn">Pizzas & Pastas</button>
+            <button class="cat-btn">Desserts</button>
+            <button class="cat-btn">Beverages</button>
+        </div>
+
+        <div class="menu-grid">
+            <div class="food-card">
+                <div class="food-icon-box"><i class="fa-solid fa-pizza-slice"></i></div>
+                <div class="food-info">
+                    <div class="food-top">
+                        <h3 class="food-name">Truffle Margherita</h3>
+                        <span class="food-price">$16.50</span>
+                    </div>
+                    <p class="food-desc">Fresh buffalo mozzarella, san marzano tomatoes, basil, and black truffle oil.</p>
+                    <div class="food-rating"><i class="fa-solid fa-star"></i> 4.9 (84 reviews)</div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-icon-box"><i class="fa-solid fa-burger"></i></div>
+                <div class="food-info">
+                    <div class="food-top">
+                        <h3 class="food-name">Smoky Angus Burger</h3>
+                        <span class="food-price">$14.00</span>
+                    </div>
+                    <p class="food-desc">Aged cheddar, caramelized onions, smoked bacon, and signature BBQ sauce on brioche.</p>
+                    <div class="food-rating"><i class="fa-solid fa-star"></i> 4.8 (112 reviews)</div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-icon-box"><i class="fa-solid fa-bowl-food"></i></div>
+                <div class="food-info">
+                    <div class="food-top">
+                        <h3 class="food-name">Creamy Alfredo Penne</h3>
+                        <span class="food-price">$13.50</span>
+                    </div>
+                    <p class="food-desc">Handcrafted pasta tossed in rich parmesan cream, roasted garlic, and parsley.</p>
+                    <div class="food-rating"><i class="fa-solid fa-star"></i> 4.7 (65 reviews)</div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-icon-box"><i class="fa-solid fa-cake-candles"></i></div>
+                <div class="food-info">
+                    <div class="food-top">
+                        <h3 class="food-name">Belgian Lava Fondant</h3>
+                        <span class="food-price">$8.50</span>
+                    </div>
+                    <p class="food-desc">Warm molten center chocolate cake served with Madagascar vanilla gelato.</p>
+                    <div class="food-rating"><i class="fa-solid fa-star"></i> 5.0 (150 reviews)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

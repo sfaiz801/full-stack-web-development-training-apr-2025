@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 10 - String & Algorithm Utilities</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; padding: 30px; }
+        .card { background: #1e293b; padding: 20px; border-radius: 12px; max-width: 580px; margin-bottom: 20px; }
+        input { padding: 8px 12px; border-radius: 6px; border: 1px solid #334155; background: #0b1120; color: #fff; margin-right: 8px; }
+        button { background: #6366f1; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+        .result { margin-top: 10px; font-weight: 700; color: #38bdf8; }
+    </style>
+</head>
+<body>
+    <h1 style="color: #818cf8;">Task 10: Core Algorithm Utilities</h1>
+    <p>Interactive verification for Palindromes, Anagrams, and Frequency counts.</p>
+
+    <!-- Palindrome -->
+    <div class="card">
+        <h3>1. Palindrome Checker</h3>
+        <input type="text" id="palInput" placeholder="e.g. racecar, madam, A man a plan a canal Panama">
+        <button onclick="checkPal()">Check</button>
+        <div id="palResult" class="result"></div>
+    </div>
+
+    <!-- Anagram -->
+    <div class="card">
+        <h3>2. Anagram Checker</h3>
+        <input type="text" id="ana1" placeholder="Word 1 (e.g. listen)">
+        <input type="text" id="ana2" placeholder="Word 2 (e.g. silent)">
+        <button onclick="checkAna()">Verify Anagram</button>
+        <div id="anaResult" class="result"></div>
+    </div>
+
+    <!-- Frequency Counter -->
+    <div class="card">
+        <h3>3. Character / Word Frequency Counter</h3>
+        <input type="text" id="freqInput" placeholder="Enter sentence or word..." style="width: 70%;">
+        <button onclick="countFreq()">Analyze</button>
+        <pre id="freqResult" style="background: #0b1120; padding: 12px; border-radius: 8px; margin-top: 10px; color: #34d399;"></pre>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

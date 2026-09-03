@@ -1,0 +1,11 @@
+# Compiled C Binaries & Objects
+*.exe
+*.out
+*.o
+*.obj
+*.pdb
+*.ilk
+
+# VS Code & Editor artifacts
+tempCodeRunnerFile.*
+.vscode/

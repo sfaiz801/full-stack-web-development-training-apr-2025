@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Glassmorphic Music Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #090e17;
+            background-image: radial-gradient(circle at top right, #311042, transparent 60%),
+                              radial-gradient(circle at bottom left, #1e1b4b, transparent 60%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .player-card {
+            width: 350px;
+            background: rgba(22, 28, 45, 0.8);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 30px 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .top-nav i {
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        .top-nav i:hover {
+            color: #ffffff;
+        }
+
+        .vinyl-art {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(#1e1b4b, #6366f1, #ec4899, #1e1b4b);
+            margin: 0 auto 28px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.35);
+            animation: spin 10s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .vinyl-art.playing {
+            animation-play-state: running;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .vinyl-inner {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #090e17;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #818cf8;
+        }
+
+        .track-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .artist-name {
+            color: #94a3b8;
+            font-size: 0.88rem;
+            margin-bottom: 25px;
+        }
+
+        .progress-bar-container {
+            margin-bottom: 25px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            width: 45%;
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1, #ec4899);
+            border-radius: 10px;
+        }
+
+        .time-stamps {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 8px;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .control-btn {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        .play-btn {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: #ffffff;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+            transition: all 0.2s;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="player-card">
+        <div class="top-nav">
+            <i class="fa-solid fa-chevron-down"></i>
+            <span>NOW PLAYING</span>
+            <i class="fa-solid fa-list-ul"></i>
+        </div>
+
+        <div class="vinyl-art" id="vinyl">
+            <div class="vinyl-inner">
+                <i class="fa-solid fa-music"></i>
+            </div>
+        </div>
+
+        <h3 class="track-title">Midnight Waves</h3>
+        <p class="artist-name">Lofi Ambient Chill</p>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="fill"></div>
+            </div>
+            <div class="time-stamps">
+                <span>1:24</span>
+                <span>3:45</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn"><i class="fa-solid fa-shuffle"></i></button>
+            <button class="control-btn"><i class="fa-solid fa-backward-step"></i></button>
+            <button class="play-btn" id="play-btn" onclick="togglePlay()">
+                <i class="fa-solid fa-play" id="play-icon"></i>
+            </button>
+            <button class="control-btn"><i class="fa-solid fa-forward-step"></i></button>
+            <button class="control-btn"><i class="fa-solid fa-repeat"></i></button>
+        </div>
+    </div>
+
+    <script>
+        let isPlaying = false;
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            const vinyl = document.getElementById('vinyl');
+            const icon = document.getElementById('play-icon');
+            if (isPlaying) {
+                vinyl.classList.add('playing');
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+            } else {
+                vinyl.classList.remove('playing');
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+            }
+        }
+    </script>
+</body>
+</html>

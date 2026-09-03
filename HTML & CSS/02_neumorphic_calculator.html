@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Dark Glass Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            user-select: none;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #090d16;
+            background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                              radial-gradient(at 50% 100%, hsla(225,39%,20%,1) 0, transparent 50%);
+        }
+
+        .calculator {
+            width: 360px;
+            padding: 28px;
+            border-radius: 32px;
+            background: rgba(22, 28, 45, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .display {
+            background: rgba(10, 14, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: right;
+            margin-bottom: 24px;
+            min-height: 105px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        .previous-operand {
+            color: #64748b;
+            font-size: 1rem;
+            min-height: 24px;
+        }
+
+        .current-operand {
+            color: #f8fafc;
+            font-size: 2.3rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        button {
+            height: 62px;
+            border-radius: 18px;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.04);
+            color: #e2e8f0;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        button.operator {
+            background: rgba(99, 102, 241, 0.15);
+            color: #818cf8;
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        button.operator:hover {
+            background: #6366f1;
+            color: #ffffff;
+        }
+
+        button.action {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fb7185;
+            border-color: rgba(244, 63, 94, 0.3);
+        }
+
+        button.action:hover {
+            background: #f43f5e;
+            color: #ffffff;
+        }
+
+        button.equal {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: #ffffff;
+            grid-column: span 2;
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.35);
+        }
+
+        button.equal:hover {
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
+            box-shadow: 0 12px 25px rgba(99, 102, 241, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="display">
+            <div class="previous-operand" id="prev-op"></div>
+            <div class="current-operand" id="curr-op">0</div>
+        </div>
+        <div class="keypad">
+            <button class="action" onclick="clearAll()">AC</button>
+            <button class="action" onclick="deleteLast()">DEL</button>
+            <button class="operator" onclick="chooseOperator('%')">%</button>
+            <button class="operator" onclick="chooseOperator('/')">÷</button>
+
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="chooseOperator('*')">×</button>
+
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="operator" onclick="chooseOperator('-')">−</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="operator" onclick="chooseOperator('+')">+</button>
+
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button class="equal" onclick="compute()">=</button>
+        </div>
+    </div>
+
+    <script>
+        let currentInput = '0';
+        let previousInput = '';
+        let operation = null;
+
+        const prevEl = document.getElementById('prev-op');
+        const currEl = document.getElementById('curr-op');
+
+        function updateDisplay() {
+            currEl.innerText = currentInput;
+            if (operation != null) {
+                prevEl.innerText = `${previousInput} ${operation}`;
+            } else {
+                prevEl.innerText = '';
+            }
+        }
+
+        function appendNumber(number) {
+            if (number === '.' && currentInput.includes('.')) return;
+            if (currentInput === '0' && number !== '.') {
+                currentInput = number;
+            } else {
+                currentInput += number;
+            }
+            updateDisplay();
+        }
+
+        function chooseOperator(op) {
+            if (currentInput === '') return;
+            if (previousInput !== '') {
+                compute();
+            }
+            operation = op;
+            previousInput = currentInput;
+            currentInput = '';
+            updateDisplay();
+        }
+
+        function compute() {
+            let computation;
+            const prev = parseFloat(previousInput);
+            const current = parseFloat(currentInput);
+            if (isNaN(prev) || isNaN(current)) return;
+
+            switch (operation) {
+                case '+': computation = prev + current; break;
+                case '-': computation = prev - current; break;
+                case '*': computation = prev * current; break;
+                case '/': computation = current === 0 ? 'Error' : prev / current; break;
+                case '%': computation = prev % current; break;
+                default: return;
+            }
+
+            currentInput = String(computation);
+            operation = null;
+            previousInput = '';
+            updateDisplay();
+        }
+
+        function clearAll() {
+            currentInput = '0';
+            previousInput = '';
+            operation = null;
+            updateDisplay();
+        }
+
+        function deleteLast() {
+            if (currentInput.length === 1 || currentInput === 'Error') {
+                currentInput = '0';
+            } else {
+                currentInput = currentInput.slice(0, -1);
+            }
+            updateDisplay();
+        }
+    </script>
+</body>
+</html>

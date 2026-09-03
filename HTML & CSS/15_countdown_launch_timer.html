@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Launch Countdown & Newsletter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #090e17;
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(236, 72, 153, 0.15) 0%, transparent 40%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .launch-card {
+            max-width: 680px;
+            width: 100%;
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 50px 35px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+        }
+
+        .pill-badge {
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .launch-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .launch-desc {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto 35px;
+        }
+
+        .timer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        .timer-box {
+            background: rgba(10, 14, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 18px 10px;
+            box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.02);
+        }
+
+        .timer-num {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #818cf8;
+            text-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .timer-unit {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 14px 20px;
+            background: rgba(10, 14, 23, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .email-input:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .notify-btn {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            border: none;
+            color: #ffffff;
+            padding: 14px 24px;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
+            white-space: nowrap;
+        }
+
+        .notify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="launch-card">
+        <span class="pill-badge"><i class="fa-solid fa-rocket"></i> Coming Soon</span>
+        <h1 class="launch-title">Something Epic Is Landing</h1>
+        <p class="launch-desc">We're crafting an innovative new developer platform. Subscribe to get early VIP access on launch day.</p>
+
+        <div class="timer-grid">
+            <div class="timer-box">
+                <div class="timer-num" id="days">18</div>
+                <div class="timer-unit">Days</div>
+            </div>
+            <div class="timer-box">
+                <div class="timer-num" id="hours">06</div>
+                <div class="timer-unit">Hours</div>
+            </div>
+            <div class="timer-box">
+                <div class="timer-num" id="minutes">42</div>
+                <div class="timer-unit">Minutes</div>
+            </div>
+            <div class="timer-box">
+                <div class="timer-num" id="seconds">15</div>
+                <div class="timer-unit">Seconds</div>
+            </div>
+        </div>
+
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('🎉 You are on the VIP waitlist!');">
+            <input type="email" class="email-input" placeholder="Enter your email address..." required>
+            <button type="submit" class="notify-btn">Notify Me</button>
+        </form>
+    </div>
+
+    <script>
+        // Set target date 18 days in future
+        const targetDate = new Date().getTime() + (18 * 24 * 60 * 60 * 1000) + (6 * 60 * 60 * 1000);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>

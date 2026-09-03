@@ -1,0 +1,39 @@
+.avatar-group {
+    display: flex;
+}
+
+.avatar-wrapper {
+    position: relative;
+    margin-left: -15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.avatar-wrapper:hover {
+    transform: translateY(-8px);
+    z-index: 10;
+}
+
+.avatar-img {
+    border: 3px solid white;
+}
+
+/* Tooltip style */
+.avatar-tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+.avatar-wrapper:hover .avatar-tooltip {
+    opacity: 1;
+}

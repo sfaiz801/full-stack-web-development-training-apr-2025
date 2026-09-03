@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7 - Async/Await Data Fetcher</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; padding: 30px; }
+        .quote-box { background: #1e293b; padding: 25px; border-radius: 12px; max-width: 520px; border-left: 4px solid #6366f1; }
+        blockquote { font-size: 1.15rem; margin: 0 0 15px 0; font-style: italic; color: #e2e8f0; }
+        .author { color: #818cf8; font-weight: 600; text-align: right; }
+        button { background: #6366f1; color: #fff; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 15px; }
+        button:hover { background: #4f46e5; }
+        .status { font-size: 0.85rem; color: #94a3b8; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1 style="color: #818cf8;">Task 7: Async/Await & Robust Error Handling</h1>
+    <p>Fetches real-time inspirational quotes via public REST API with loading states and try/catch.</p>
+
+    <div class="quote-box">
+        <blockquote id="quoteText">"Loading inspiring wisdom..."</blockquote>
+        <div id="quoteAuthor" class="author">- Loading</div>
+        <div id="statusMsg" class="status"></div>
+        <button id="fetchBtn" onclick="fetchQuote()">Get Another Quote</button>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

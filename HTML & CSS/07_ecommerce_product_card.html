@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern E-Commerce Sneaker Product Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #090e17;
+            padding: 20px;
+        }
+
+        .product-card {
+            width: 350px;
+            background: #111827;
+            border-radius: 26px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 60px -10px rgba(99, 102, 241, 0.25);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .image-banner {
+            height: 220px;
+            background: linear-gradient(135deg, #1e1b4b, #311042);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .brand-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 1.8rem;
+        }
+
+        .wishlist-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .wishlist-btn.active {
+            color: #f43f5e;
+            background: rgba(244, 63, 94, 0.2);
+            border-color: #f43f5e;
+        }
+
+        .product-icon {
+            font-size: 6.5rem;
+            color: #6366f1;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
+            transform: rotate(-25deg);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .product-card:hover .product-icon {
+            transform: rotate(-10deg) scale(1.1);
+        }
+
+        .card-content {
+            padding: 24px;
+            color: #ffffff;
+        }
+
+        .category-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #818cf8;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .rating-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 18px;
+            font-size: 0.85rem;
+        }
+
+        .stars {
+            color: #fbbf24;
+        }
+
+        .rating-num {
+            color: #9ca3af;
+            font-size: 0.8rem;
+        }
+
+        .selectors-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+        .selector-label {
+            font-size: 0.78rem;
+            color: #9ca3af;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .sizes {
+            display: flex;
+            gap: 6px;
+        }
+
+        .size-chip {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .size-chip.active, .size-chip:hover {
+            background: #6366f1;
+            color: #ffffff;
+            border-color: #6366f1;
+        }
+
+        .colors {
+            display: flex;
+            gap: 8px;
+        }
+
+        .color-dot {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.2s;
+        }
+
+        .color-dot.active {
+            border-color: #ffffff;
+            transform: scale(1.15);
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .price-val {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .buy-btn {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            border: none;
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+        }
+
+        .buy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-card">
+        <div class="image-banner">
+            <i class="fa-solid fa-bolt brand-logo"></i>
+            <button class="wishlist-btn" onclick="this.classList.toggle('active')">
+                <i class="fa-solid fa-heart"></i>
+            </button>
+            <i class="fa-solid fa-shoe-prints product-icon"></i>
+        </div>
+
+        <div class="card-content">
+            <div class="category-tag">Running • Performance</div>
+            <h3 class="product-title">Nike Air Max HyperDrive</h3>
+            
+            <div class="rating-box">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <span class="rating-num">4.8 (124 reviews)</span>
+            </div>
+
+            <div class="selectors-row">
+                <div>
+                    <div class="selector-label">SIZE (US)</div>
+                    <div class="sizes">
+                        <div class="size-chip">8</div>
+                        <div class="size-chip active">9</div>
+                        <div class="size-chip">10</div>
+                        <div class="size-chip">11</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="selector-label">COLOR</div>
+                    <div class="colors">
+                        <div class="color-dot active" style="background: #6366f1;"></div>
+                        <div class="color-dot" style="background: #ec4899;"></div>
+                        <div class="color-dot" style="background: #10b981;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="price-val">$189.99</div>
+                <button class="buy-btn" onclick="alert('Item added to cart! 🛒')">
+                    <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

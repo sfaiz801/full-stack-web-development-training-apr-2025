@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "title": "Build Bootstrap Admin Dashboard",
+        "description": "Create responsive admin dashboard with sidebar and statistics cards",
+        "status": "completed",
+        "priority": "high",
+        "assigned_to": "Faiz Ahmad",
+        "due_date": "2024-05-10",
+        "created_at": "2024-05-01T10:00:00",
+        "updated_at": "2024-05-08T15:30:00"
+    },
+    {
+        "id": 2,
+        "title": "Design SQL Database Schema",
+        "description": "Write DDL script with users, profiles and student tasks tables",
+        "status": "completed",
+        "priority": "urgent",
+        "assigned_to": "Faiz Ahmad",
+        "due_date": "2024-05-15",
+        "created_at": "2024-05-05T09:00:00",
+        "updated_at": "2024-05-12T11:00:00"
+    },
+    {
+        "id": 3,
+        "title": "Integrate Firebase Authentication",
+        "description": "Verify client idTokens in FastAPI backend and sync user profile",
+        "status": "in_progress",
+        "priority": "high",
+        "assigned_to": "Rahul Sharma",
+        "due_date": "2024-05-20",
+        "created_at": "2024-05-10T14:20:00",
+        "updated_at": "2024-05-10T14:20:00"
+    },
+    {
+        "id": 4,
+        "title": "Deploy Backend on AWS EC2",
+        "description": "Setup Nginx reverse proxy and Gunicorn service for FastAPI",
+        "status": "todo",
+        "priority": "medium",
+        "assigned_to": "Priya Verma",
+        "due_date": "2024-05-25",
+        "created_at": "2024-05-12T08:00:00",
+        "updated_at": "2024-05-12T08:00:00"
+    }
+]

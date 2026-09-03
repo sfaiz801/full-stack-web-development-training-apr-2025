@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Digital Clock</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Ambient Glow Spheres */
+        .sphere-1, .sphere-2 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 1;
+            opacity: 0.6;
+            animation: float 8s ease-in-out infinite alternate;
+        }
+        .sphere-1 {
+            width: 320px;
+            height: 320px;
+            background: #6366f1;
+            top: 15%;
+            left: 20%;
+        }
+        .sphere-2 {
+            width: 380px;
+            height: 380px;
+            background: #ec4899;
+            bottom: 15%;
+            right: 20%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-40px) scale(1.1); }
+        }
+
+        /* Glassmorphic Container */
+        .clock-card {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
+            border-radius: 28px;
+            padding: 45px 55px;
+            text-align: center;
+            color: #ffffff;
+            max-width: 520px;
+            width: 90%;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.25);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #a5b4fc;
+            margin-bottom: 20px;
+        }
+
+        .time-display {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 4.2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 0 0 30px rgba(99, 102, 241, 0.7);
+            background: linear-gradient(180deg, #ffffff 40%, #c7d2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .ampm-sec {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            color: #f43f5e;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .ampm-sec span {
+            background: rgba(244, 63, 94, 0.15);
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            padding: 4px 12px;
+            border-radius: 8px;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            margin: 20px 0;
+        }
+
+        .date-display {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #cbd5e1;
+            letter-spacing: 0.5px;
+        }
+
+        .day-name {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sphere-1"></div>
+    <div class="sphere-2"></div>
+
+    <div class="clock-card">
+        <span class="badge">Live World Clock</span>
+        <div class="time-display" id="time">00:00:00</div>
+        <div class="ampm-sec">
+            <span id="ampm">AM</span>
+            <span id="timezone">Local Time</span>
+        </div>
+        <div class="divider"></div>
+        <div class="date-display" id="date">Loading Date...</div>
+        <div class="day-name" id="day">Today</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; // '0' should be '12'
+            const formattedHours = String(hours).padStart(2, '0');
+
+            document.getElementById('time').innerText = `${formattedHours}:${minutes}:${seconds}`;
+            document.getElementById('ampm').innerText = ampm;
+
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('date').innerText = now.toLocaleDateString(undefined, options);
+
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            document.getElementById('day').innerText = days[now.getDay()];
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

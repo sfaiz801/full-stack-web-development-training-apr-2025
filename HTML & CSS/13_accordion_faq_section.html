@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Animated FAQ Accordion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #090e17;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #ffffff;
+        }
+
+        .faq-container {
+            max-width: 680px;
+            width: 100%;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .faq-tag {
+            color: #818cf8;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .faq-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-top: 6px;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .faq-item {
+            background: rgba(22, 28, 45, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .faq-item.active {
+            border-color: #6366f1;
+            background: rgba(30, 27, 75, 0.5);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .question-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .faq-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #818cf8;
+            transition: transform 0.3s ease, background 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            background: #6366f1;
+            color: #ffffff;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+            padding: 0 24px;
+            color: #94a3b8;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 24px 22px;
+            transition: max-height 0.35s cubic-bezier(1, 0, 1, 0), padding 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="faq-container">
+        <div class="faq-header">
+            <span class="faq-tag">Have Questions?</span>
+            <h1 class="faq-title">Frequently Asked Questions</h1>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item active">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span class="question-text">What technologies are covered in this training repository?</span>
+                    <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-answer">
+                    This repository covers end-to-end Full Stack Web Development from fundamentals (C Language, HTML5 & CSS3, JavaScript ES6+, Python) to modern frameworks (React.js, Redux, Next.js, APIs, Databases & Cloud).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span class="question-text">How do I run and test these HTML/CSS files?</span>
+                    <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-answer">
+                    You can simply double-click any `.html` file to open it directly in Chrome, Edge, or Firefox! No complex build tools or local servers are required.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span class="question-text">Are these UI components responsive for mobile screens?</span>
+                    <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-answer">
+                    Yes! Every single UI component is built using modern CSS Flexbox and Grid layouts with mobile-first viewport meta tags and responsive breakpoints.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span class="question-text">Can I customize the color scheme and fonts?</span>
+                    <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-answer">
+                    Absolutely. The CSS uses clean modern variables and hex/gradient values that you can easily tweak in the `<style>` block of each file.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFaq(headerEl) {
+            const currentItem = headerEl.parentElement;
+            const allItems = document.querySelectorAll('.faq-item');
+            
+            allItems.forEach(item => {
+                if (item !== currentItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            currentItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

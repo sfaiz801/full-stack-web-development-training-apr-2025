@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6 - Debounced Search Filter</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; padding: 30px; }
+        .box { background: #1e293b; padding: 25px; border-radius: 12px; max-width: 500px; }
+        input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #334155; background: #0b1120; color: #fff; font-size: 1rem; box-sizing: border-box; margin-bottom: 15px; }
+        input:focus { outline: 2px solid #6366f1; }
+        ul { list-style: none; padding: 0; margin: 0; max-height: 250px; overflow-y: auto; }
+        li { padding: 10px 14px; background: rgba(255,255,255,0.03); margin-bottom: 6px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); }
+        .counter { color: #94a3b8; font-size: 0.85rem; margin-bottom: 12px; }
+        .badge { background: #6366f1; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <h1 style="color: #818cf8;">Task 6: Debounced Search & Live Filter</h1>
+    <p>Debounces keystrokes by 300ms before filtering the skills list.</p>
+
+    <div class="box">
+        <input type="text" id="searchInput" placeholder="Search frameworks or skills (e.g. React, Docker)...">
+        <div class="counter">
+            API / Query calls triggered: <span id="callCount" class="badge">0</span>
+        </div>
+        <ul id="skillsList"></ul>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

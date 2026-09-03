@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Glass Weather Card Widget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0b132b, #1c2541, #3a506b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .weather-card {
+            width: 380px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 30px;
+            padding: 32px 28px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 10px 16px;
+            margin-bottom: 24px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            font-size: 0.92rem;
+            width: 100%;
+            margin-left: 10px;
+        }
+
+        .location-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .city-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .date-str {
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        .weather-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 26px;
+        }
+
+        .weather-icon {
+            font-size: 4.8rem;
+            color: #facc15;
+            filter: drop-shadow(0 10px 20px rgba(250, 204, 21, 0.4));
+            margin-bottom: 10px;
+            animation: pulse 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.08); }
+        }
+
+        .temp-display {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .condition-text {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        .weather-details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 18px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .detail-item i {
+            font-size: 1.2rem;
+            color: #38bdf8;
+            margin-bottom: 6px;
+        }
+
+        .detail-val {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .detail-label {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="weather-card">
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass" style="color: #94a3b8;"></i>
+            <input type="text" placeholder="Search city (e.g. Mumbai, London)..." value="Mumbai, IN">
+        </div>
+
+        <div class="location-header">
+            <h2 class="city-name"><i class="fa-solid fa-location-dot" style="color: #f43f5e; font-size: 1.2rem;"></i> Mumbai, IN</h2>
+            <p class="date-str" id="cur-date">Thursday, 03 September</p>
+        </div>
+
+        <div class="weather-hero">
+            <i class="fa-solid fa-cloud-sun weather-icon"></i>
+            <div class="temp-display">29°C</div>
+            <div class="condition-text">Partly Cloudy</div>
+        </div>
+
+        <div class="weather-details-grid">
+            <div class="detail-item">
+                <i class="fa-solid fa-droplet"></i>
+                <div class="detail-val">74%</div>
+                <div class="detail-label">Humidity</div>
+            </div>
+            <div class="detail-item">
+                <i class="fa-solid fa-wind"></i>
+                <div class="detail-val">18 km/h</div>
+                <div class="detail-label">Wind</div>
+            </div>
+            <div class="detail-item">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div class="detail-val">1012 hPa</div>
+                <div class="detail-label">Pressure</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const options = { weekday: 'long', day: 'numeric', month: 'long' };
+        document.getElementById('cur-date').innerText = new Date().toLocaleDateString(undefined, options);
+    </script>
+</body>
+</html>

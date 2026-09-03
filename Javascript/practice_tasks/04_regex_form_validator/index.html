@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8 - Form Validation & Regex</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; padding: 30px; }
+        .form-box { background: #1e293b; padding: 25px; border-radius: 12px; max-width: 440px; }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-size: 0.9rem; margin-bottom: 6px; color: #cbd5e1; }
+        input { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid #334155; background: #0b1120; color: #fff; font-size: 0.95rem; box-sizing: border-box; }
+        .error { color: #f87171; font-size: 0.8rem; margin-top: 4px; display: none; }
+        .strength-bar { height: 6px; background: #334155; border-radius: 3px; margin-top: 6px; overflow: hidden; }
+        .strength-fill { height: 100%; width: 0%; transition: width 0.3s, background 0.3s; }
+        button { width: 100%; background: #6366f1; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #4f46e5; }
+        .success-box { display: none; background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #34d399; padding: 12px; border-radius: 8px; margin-top: 15px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1 style="color: #818cf8;">Task 8: Form Validation & Regular Expressions</h1>
+    <p>Live regex validation with visual password strength assessment.</p>
+
+    <div class="form-box">
+        <form id="regForm">
+            <div class="form-group">
+                <label for="username">Username (Alphanumeric, 4-15 chars)</label>
+                <input type="text" id="username" placeholder="johndoe12">
+                <div class="error" id="userErr">Username must be 4-15 letters/numbers only.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="john@example.com">
+                <div class="error" id="emailErr">Please enter a valid email address.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password (min 8 chars, 1 uppercase, 1 digit, 1 symbol)</label>
+                <input type="password" id="password" placeholder="••••••••">
+                <div class="strength-bar">
+                    <div id="strengthFill" class="strength-fill"></div>
+                </div>
+                <div class="error" id="passErr">Password is too weak.</div>
+            </div>
+
+            <button type="submit">Submit Registration</button>
+        </form>
+        <div id="successBox" class="success-box">✓ All fields validated successfully!</div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

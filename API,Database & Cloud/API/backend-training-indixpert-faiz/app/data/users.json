@@ -1,0 +1,68 @@
+[
+    {
+        "full_name": "Faiz",
+        "email": "faiz@example.com",
+        "mobile": "9876543210",
+        "password": "937e8d5fbb48bd4949536cd65b8d35c426b80d2f830c5c308e2cdec422ae2244"
+    },
+    {
+        "full_name": "Faiz Siddique",
+        "email": "siddiquefaiz521@gmail.com",
+        "mobile": "9431255424",
+        "password": "29fcc3c47107994f93a8d2453a836c7a55f4a6a62a1ea5422aeb0ead57927508"
+    },
+    {
+        "full_name": "Test User",
+        "email": "test@gmail.com",
+        "mobile": "9876543210",
+        "password": "ff7bd97b1a7789ddd2775122fd6817f3173672da9f802ceec57f284325bf589f"
+    },
+    {
+        "full_name": "Orhan",
+        "email": "orhan1@gmail.com",
+        "mobile": "9431255412",
+        "password": "e86f78a8a3caf0b60d8e74e5942aa6d86dc150cd3c03338aef25b7d2d7e3acc7"
+    },
+    {
+        "full_name": "Faiz Siddique",
+        "email": "siddiquefaiz521@indixpert.com",
+        "mobile": "8873440819",
+        "password": "263e770c5bb5434a12a3c05f9f628e3e1671af5a2bba0371297c3f3a5fbb5ca3"
+    },
+    {
+        "full_name": "Faiz Siddique",
+        "email": "siddiquefaiz@gmail.com",
+        "mobile": "+918873440819",
+        "password": "4a383f7603ff33f12217bde876e7d2e3fe791d4f31922652825ae2871ee36f6b"
+    },
+    {
+        "full_name": "Faiz Siddique",
+        "email": "siddiquefaiz521@gmail.co",
+        "mobile": "+919431255424",
+        "password": "52c8c49d84386bb193edc07c04bb6cc0579b71014db1fb9eec23a2b5ab68aec2"
+    },
+    {
+        "full_name": "Test User",
+        "email": "testuser@gmail.com",
+        "mobile": "+919876543210",
+        "password": "849f1575ccfbf3a4d6cf00e6c5641b7fd4da2ed3e212c2d79ba9161a5a432ff0"
+    },
+    {
+        "full_name": "Faiz Siddique",
+        "email": "siddiquefaiz@gmail.in",
+        "mobile": "+918873440819",
+        "password": "29fcc3c47107994f93a8d2453a836c7a55f4a6a62a1ea5422aeb0ead57927508"
+    },
+    {
+        "full_name": "New Test User",
+        "email": "newtest@gmail.com",
+        "mobile": "+919999888877",
+        "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f"
+    },
+    {
+        "full_name": "Faiz Siddique",
+        "email": "faiz@gmail.com",
+        "mobile": "+919279809710",
+        "password": "a366ff359a2bcbbc1aee21273a8c70f5e96daa6c66b9b94e711592fa84c2efbe"
+    }
+]

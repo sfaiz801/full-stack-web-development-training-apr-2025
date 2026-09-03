@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Crypto Portfolio Widget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #090e17;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .crypto-widget {
+            width: 380px;
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 28px;
+            padding: 30px 26px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .widget-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+        .balance-label {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .total-balance {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-top: 4px;
+        }
+
+        .badge-gain {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .action-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .act-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 12px;
+            text-align: center;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .act-btn i {
+            font-size: 1.1rem;
+            color: #818cf8;
+        }
+
+        .act-btn:hover {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: #6366f1;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .assets-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .asset-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: all 0.2s;
+        }
+
+        .asset-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .asset-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .coin-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .btc { background: rgba(247, 147, 26, 0.2); color: #f7931a; }
+        .eth { background: rgba(98, 126, 234, 0.2); color: #627eea; }
+        .sol { background: rgba(20, 241, 149, 0.2); color: #14f195; }
+
+        .coin-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .coin-symbol {
+            font-size: 0.78rem;
+            color: #94a3b8;
+        }
+
+        .asset-right {
+            text-align: right;
+        }
+
+        .coin-value {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .coin-change {
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .positive { color: #34d399; }
+        .negative { color: #f43f5e; }
+    </style>
+</head>
+<body>
+
+    <div class="crypto-widget">
+        <div class="widget-header">
+            <div>
+                <span class="balance-label">Total Portfolio</span>
+                <h1 class="total-balance">$42,850.60</h1>
+            </div>
+            <div class="badge-gain">
+                <i class="fa-solid fa-arrow-trend-up"></i> +8.4%
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="act-btn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Send
+            </div>
+            <div class="act-btn">
+                <i class="fa-solid fa-arrow-down-left-and-up-right-to-center"></i> Receive
+            </div>
+            <div class="act-btn">
+                <i class="fa-solid fa-rotate"></i> Swap
+            </div>
+        </div>
+
+        <div class="section-title">
+            <span>Your Assets</span>
+            <span style="color: #818cf8; cursor: pointer; font-size: 0.8rem;">View All</span>
+        </div>
+
+        <div class="assets-list">
+            <div class="asset-item">
+                <div class="asset-left">
+                    <div class="coin-icon btc"><i class="fa-brands fa-bitcoin"></i></div>
+                    <div>
+                        <div class="coin-name">Bitcoin</div>
+                        <div class="coin-symbol">0.45 BTC</div>
+                    </div>
+                </div>
+                <div class="asset-right">
+                    <div class="coin-value">$28,940.00</div>
+                    <div class="coin-change positive">+4.2%</div>
+                </div>
+            </div>
+
+            <div class="asset-item">
+                <div class="asset-left">
+                    <div class="coin-icon eth"><i class="fa-brands fa-ethereum"></i></div>
+                    <div>
+                        <div class="coin-name">Ethereum</div>
+                        <div class="coin-symbol">3.20 ETH</div>
+                    </div>
+                </div>
+                <div class="asset-right">
+                    <div class="coin-value">$10,480.20</div>
+                    <div class="coin-change positive">+6.8%</div>
+                </div>
+            </div>
+
+            <div class="asset-item">
+                <div class="asset-left">
+                    <div class="coin-icon sol"><i class="fa-solid fa-bolt"></i></div>
+                    <div>
+                        <div class="coin-name">Solana</div>
+                        <div class="coin-symbol">24.5 SOL</div>
+                    </div>
+                </div>
+                <div class="asset-right">
+                    <div class="coin-value">$3,430.40</div>
+                    <div class="coin-change negative">-1.5%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
