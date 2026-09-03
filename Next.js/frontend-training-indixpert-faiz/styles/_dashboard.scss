@@ -1,0 +1,287 @@
+@use "./variables" as *;
+
+.dashboard-container {
+  animation: fadeIn 0.5s ease-out;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  min-height: 100vh;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── NAVBAR ─────────────────────────────────────────── */
+.glass-nav {
+  background: rgba(15, 23, 42, 0.97) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
+}
+
+.user-name-truncate {
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── HERO BANNER ────────────────────────────────────── */
+.hero-gradient-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 45%, #312e81 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+/* ─── STAT CARDS ─────────────────────────────────────── */
+.stat-card-gradient {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px !important;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px -10px rgba(15, 23, 42, 0.12) !important;
+  }
+}
+
+.icon-wrapper-colorful {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+
+  &.emerald {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.25) 100%);
+    color: #059669;
+  }
+
+  &.amber {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.25) 100%);
+    color: #d97706;
+  }
+
+  &.indigo {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(79, 70, 229, 0.25) 100%);
+    color: #4f46e5;
+  }
+
+  &.rose {
+    background: linear-gradient(135deg, rgba(244, 63, 94, 0.15) 0%, rgba(225, 29, 72, 0.25) 100%);
+    color: #e11d48;
+  }
+}
+
+.stat-card-gradient:hover .icon-wrapper-colorful {
+  transform: scale(1.1) rotate(6deg);
+}
+
+/* ─── COLLECTION CARDS ───────────────────────────────── */
+.collection-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 16px !important;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12) !important;
+    border-color: #f59e0b !important;
+  }
+}
+
+/* ─── STORE INFO BOXES ───────────────────────────────── */
+.store-info-box {
+  border-radius: 16px;
+  transition: all 0.25s ease;
+
+  &.amber-box {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 1px solid #fde68a;
+  }
+
+  &.emerald-box {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border: 1px solid #a7f3d0;
+  }
+
+  &.indigo-box {
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    border: 1px solid #c7d2fe;
+  }
+}
+
+/* ─── PROGRESS BAR ───────────────────────────────────── */
+.progress-animated {
+  background-color: #e2e8f0 !important;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+
+  .bar-glow {
+    background: linear-gradient(90deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+    transition: width 0.6s ease;
+  }
+}
+
+/* ─── ORDER AVATAR ───────────────────────────────────── */
+.tailor-badge-avatar {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* ─── UTILITIES ──────────────────────────────────────── */
+.extra-small {
+  font-size: 0.78rem;
+}
+
+.hover-primary {
+  transition: color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    color: #f59e0b !important;
+  }
+}
+
+/* ─── MOBILE: max 576px (phones) ─────────────────────── */
+@media (max-width: 576px) {
+
+  /* Navbar */
+  .glass-nav {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .navbar-brand span:last-child {
+    font-size: 1rem !important;
+  }
+
+  .user-name-truncate {
+    max-width: 80px;
+  }
+
+  /* Hero banner */
+  .hero-gradient-card {
+    padding: 1.1rem !important;
+    border-radius: 1rem !important;
+
+    h2 {
+      font-size: 1.15rem !important;
+      line-height: 1.35;
+    }
+
+    p {
+      font-size: 0.8rem !important;
+    }
+
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* Stat cards: 2 per row on phones */
+  .stat-card-gradient {
+    padding: 0.75rem !important;
+    border-radius: 14px !important;
+
+    .icon-wrapper-colorful {
+      width: 42px;
+      height: 42px;
+      font-size: 1.1rem;
+      border-radius: 12px;
+    }
+
+    h4 {
+      font-size: 0.95rem !important;
+    }
+  }
+
+  /* Shop details: stack vertically */
+  .store-info-box {
+    border-radius: 12px;
+  }
+
+  /* Order cards */
+  .tailor-badge-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+
+  /* Collection cards: 1 per row on phones */
+  .collection-card {
+    border-radius: 12px !important;
+  }
+
+  /* Footer */
+  footer {
+    padding-top: 1.25rem !important;
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom)) !important;
+
+    h5 {
+      font-size: 1rem !important;
+    }
+  }
+
+  /* Cards general */
+  .card {
+    border-radius: 1rem !important;
+    padding: 1rem !important;
+  }
+}
+
+/* ─── TABLET: 577px – 767px ───────────────────────────── */
+@media (min-width: 577px) and (max-width: 767px) {
+  .hero-gradient-card {
+    h2 {
+      font-size: 1.4rem !important;
+    }
+  }
+
+  .user-name-truncate {
+    max-width: 100px;
+  }
+}
+
+/* ─── Safe area for notched phones ───────────────────── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  footer {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+

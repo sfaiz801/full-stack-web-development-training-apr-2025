@@ -22,6 +22,19 @@ Is folder me Next.js ke full-fledged web applications aur admin dashboards organ
   - 💬 `/messages` - Customer chat & inquiry center.
   - 🔐 `/signin` & `/signup` - Authentication pages.
 
+### 2. [frontend-training-indixpert-faiz](file:///d:/full-stack-web-development-training-apr-2024/Next.js/frontend-training-indixpert-faiz)
+**Description:** Next.js Client Application with Firebase Authentication & Profile API Integration.
+- **GitHub Source:** [https://github.com/sfaiz801/frontend-training-indixpert-faiz.git](https://github.com/sfaiz801/frontend-training-indixpert-faiz.git) (branch: `faiz`)
+- **Tech Stack:** Next.js 16, React 19, Firebase Auth SDK, Bootstrap 5, Axios, React Hook Form, Yup/Zod.
+- **Key Features:**
+  - 🔐 Firebase Authentication (Email/Password & Google Sign-In)
+  - 📱 Phone number input & authentication validation
+  - 👤 Profile management connected with FastAPI backend (`backend-training-indixpert-faiz`)
+  - 🍞 Toast notifications & user-friendly error alerts
+
+### 3. [tasks](file:///d:/full-stack-web-development-training-apr-2024/Next.js/tasks)
+**Description:** Next.js App Router practice tasks (Product Catalog, Contact Form API, Team Directory, Sprint Planner).
+
 ---
 
 ## 🚀 How to Run the Project
