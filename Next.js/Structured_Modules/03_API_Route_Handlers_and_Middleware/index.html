@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 03: Next.js API Route Handlers & Middleware</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0b0f19; color: #f8fafc; padding: 2.5rem 1rem; line-height: 1.6; }
+        .container { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        header { text-align: center; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(56,189,248,0.15); color: #38bdf8; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+        h1 { color: #38bdf8; font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { color: #94a3b8; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.75rem; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        h2 { font-size: 1.25rem; color: #818cf8; margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+        .btn-group { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .btn { background: linear-gradient(135deg, #38bdf8, #818cf8); border: none; color: #0b0f19; font-weight: 700; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; transition: transform 0.2s; }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-danger { background: linear-gradient(135deg, #f43f5e, #fb7185); color: white; }
+        .console-box { font-family: 'Fira Code', monospace; background: #030712; border: 1px solid #1e293b; border-radius: 8px; padding: 1.25rem; font-size: 0.85rem; color: #a5f3fc; white-space: pre-wrap; min-height: 120px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">Module 03</span>
+            <h1>API Route Handlers &amp; Edge Middleware</h1>
+            <p class="subtitle">Next.js App Router Web API Standards (<code>GET, POST, NextResponse</code>) and global Edge <code>middleware.js</code> interception.</p>
+        </header>
+
+        <div class="card">
+            <h2>1. Test Route Handler: <code>/api/products/route.js</code></h2>
+            <div class="btn-group">
+                <button class="btn" onclick="testApi('GET')">Test GET /api/products</button>
+                <button class="btn" onclick="testApi('POST')">Test POST /api/products</button>
+            </div>
+            <div class="console-box" id="apiResponseViewer">// Click a button to dispatch an HTTP request to the Next.js Route Handler...</div>
+        </div>
+
+        <div class="card">
+            <h2>2. Test Edge Middleware Interception (<code>middleware.js</code>)</h2>
+            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1rem;">
+                Next.js Edge Middleware intercepts incoming requests before routes render to enforce security tokens, inspect session cookies, or trigger redirects.
+            </p>
+            <div class="btn-group">
+                <button class="btn" onclick="testMiddleware(true)">Request WITH Valid Token (Passes to Route)</button>
+                <button class="btn btn-danger" onclick="testMiddleware(false)">Request WITHOUT Token (Triggers 401 Redirect)</button>
+            </div>
+            <div class="console-box" id="middlewareResponseViewer">// Click a button above to test Edge middleware authorization filter...</div>
+        </div>
+    </div>
+
+    <script>
+        function testApi(method) {
+            const viewer = document.getElementById('apiResponseViewer');
+            if (method === 'GET') {
+                const response = {
+                    status: 200,
+                    statusText: "OK",
+                    headers: { "content-type": "application/json" },
+                    body: {
+                        endpoint: "/api/products",
+                        method: "GET",
+                        count: 2,
+                        products: [
+                            { id: 101, title: "Next.js 15 Serverless Node", tier: "Production" },
+                            { id: 102, title: "FastAPI REST Microservice", tier: "High Performance" }
+                        ]
+                    }
+                };
+                viewer.textContent = `// Response from NextResponse.json() [HTTP 200 OK]:\n` + JSON.stringify(response, null, 2);
+            } else {
+                const response = {
+                    status: 201,
+                    statusText: "Created",
+                    body: {
+                        success: true,
+                        message: "Product created successfully via POST Route Handler!",
+                        createdItem: { id: 103, title: "PostgreSQL Aurora Cluster", createdAt: new Date().toISOString() }
+                    }
+                };
+                viewer.textContent = `// Response from NextResponse.json() [HTTP 201 Created]:\n` + JSON.stringify(response, null, 2);
+            }
+        }
+
+        function testMiddleware(hasAuth) {
+            const viewer = document.getElementById('middlewareResponseViewer');
+            if (hasAuth) {
+                viewer.textContent = `// [Next.js Edge Middleware] PASS:\nHeader 'Authorization: Bearer token_valid_2025' verified.\nRequest forwarded downstream to target route -> /dashboard (HTTP 200)`;
+            } else {
+                viewer.textContent = `// [Next.js Edge Middleware] INTERCEPTED:\nNo Authorization header or session cookie detected on protected route '/dashboard'.\n-> Next.js Edge Middleware issued: NextResponse.redirect(new URL('/login', request.url)) [HTTP 307]`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -56,7 +56,15 @@ full-stack-web-development-training-apr-2024/
 ## 🌟 Detailed Module Highlights
 
 ### 1. 🚀 [Next.js](file:///d:/full-stack-web-development-training-apr-2024/Next.js)
+* **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules)**: Comprehensive student learning journey across 6 core modules:
+  1. `01_Nextjs_Fundamentals_and_App_Router`: App Router conventions, Root Layout (`layout.jsx`), Server Components (RSC) vs Client Components (`'use client'`).
+  2. `02_Dynamic_Routes_and_Data_Fetching`: Dynamic routes (`[id]/page.jsx`), async server-side data fetching, React Suspense (`loading.jsx`), and `error.jsx` boundary.
+  3. `03_API_Route_Handlers_and_Middleware`: Next.js API Route Handlers (`route.js` with `GET, POST, NextResponse`) and global Edge runtime `middleware.js` interception.
+  4. `04_Authentication_and_Session_Management`: Server-side cookie token verification, Firebase Auth / JWT flows, protected route enforcement with `redirect()`.
+  5. `05_SEO_Metadata_and_Image_Optimization`: Static & dynamic metadata export (`generateMetadata`), OpenGraph cards, `next/image` layout shift prevention & AVIF/WebP pipeline.
+  6. `06_Caching_ISR_and_Production_Deployment`: 4 caching layers (Memoization, Data Cache, Full Route, Router Cache), ISR revalidation (`revalidateTag`), multi-stage Docker deployment.
 * **[lezato_restaurant_project](file:///d:/full-stack-web-development-training-apr-2024/Next.js/lezato_restaurant_project)**: Complete Food Delivery & Restaurant Admin Portal featuring live order tracking, menu & category management, customer analytics (ApexCharts & Recharts), review systems, recipe guides, and auth flows.
+* **[frontend-training-indixpert-faiz](file:///d:/full-stack-web-development-training-apr-2024/Next.js/frontend-training-indixpert-faiz)**: Next.js Client Application with Firebase Authentication (Email/Password & Google Sign-In), phone verification, and FastAPI backend profile management.
 * **[tasks](file:///d:/full-stack-web-development-training-apr-2024/Next.js/tasks)**: Next.js 14/15 App Router assignments and component patterns.
 
 ### 2. ⚛️ [React & Redux](file:///d:/full-stack-web-development-training-apr-2024/React%20&%20Redux)

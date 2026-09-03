@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 04: Authentication & Session Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0b0f19; color: #f8fafc; padding: 2.5rem 1rem; line-height: 1.6; }
+        .container { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        header { text-align: center; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(56,189,248,0.15); color: #38bdf8; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+        h1 { color: #38bdf8; font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { color: #94a3b8; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.75rem; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        h2 { font-size: 1.25rem; color: #818cf8; margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+        .btn { background: linear-gradient(135deg, #38bdf8, #818cf8); border: none; color: #0b0f19; font-weight: 700; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; transition: transform 0.2s; margin-right: 0.5rem; }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-danger { background: linear-gradient(135deg, #f43f5e, #fb7185); color: white; }
+        .session-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 9999px; font-size: 0.85rem; font-weight: bold; }
+        .session-active { background: rgba(52,211,153,0.2); color: #34d399; }
+        .session-none { background: rgba(244,63,94,0.2); color: #f43f5e; }
+        .console-box { font-family: 'Fira Code', monospace; background: #030712; border: 1px solid #1e293b; border-radius: 8px; padding: 1.25rem; font-size: 0.85rem; color: #a5f3fc; white-space: pre-wrap; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">Module 04</span>
+            <h1>Next.js Authentication &amp; Session Management</h1>
+            <p class="subtitle">Secure cookie sessions, Server Component token verification, and Firebase Auth / JWT integration.</p>
+        </header>
+
+        <div class="card">
+            <h2>Current Server Session State</h2>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span>Status: </span>
+                    <span id="sessionStatus" class="session-badge session-active">AUTHENTICATED (JWT Active)</span>
+                </div>
+                <div>
+                    <button class="btn" onclick="login()">Simulate Login (Faiz)</button>
+                    <button class="btn btn-danger" onclick="logout()">Clear Session (Logout)</button>
+                </div>
+            </div>
+
+            <div class="console-box" id="sessionConsole">// Inspecting server-side cookies().get('session_token')...</div>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = {
+            id: "USR-FAIZ-801",
+            name: "Mohammad Faiz",
+            email: "faiz@indixpert.com",
+            role: "ADMIN",
+            tokenType: "Bearer JWT",
+            expiresIn: "7 days"
+        };
+
+        function updateView() {
+            const statusBadge = document.getElementById('sessionStatus');
+            const consoleBox = document.getElementById('sessionConsole');
+
+            if (currentUser) {
+                statusBadge.className = "session-badge session-active";
+                statusBadge.innerText = "AUTHENTICATED (JWT Active)";
+                consoleBox.textContent = `// [Server Component: app/dashboard/page.jsx]\n` +
+                    `// cookies().get('session_token') VERIFIED:\n` +
+                    JSON.stringify(currentUser, null, 2);
+            } else {
+                statusBadge.className = "session-badge session-none";
+                statusBadge.innerText = "UNAUTHENTICATED";
+                consoleBox.textContent = `// [Server Component: app/dashboard/page.jsx]\n` +
+                    `// No valid session cookie found.\n` +
+                    `// Next.js executed: redirect('/login') [HTTP 307]`;
+            }
+        }
+
+        function login() {
+            currentUser = {
+                id: "USR-FAIZ-801",
+                name: "Mohammad Faiz",
+                email: "faiz@indixpert.com",
+                role: "ADMIN",
+                tokenType: "Bearer JWT",
+                expiresIn: "7 days"
+            };
+            updateView();
+        }
+
+        function logout() {
+            currentUser = null;
+            updateView();
+        }
+
+        updateView();
+    </script>
+</body>
+</html>

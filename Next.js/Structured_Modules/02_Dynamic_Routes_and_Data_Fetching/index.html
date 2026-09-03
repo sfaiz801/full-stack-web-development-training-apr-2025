@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 02: Next.js Dynamic Routes & Data Fetching</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0b0f19; color: #f8fafc; padding: 2.5rem 1rem; line-height: 1.6; }
+        .container { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        header { text-align: center; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(56,189,248,0.15); color: #38bdf8; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+        h1 { color: #38bdf8; font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { color: #94a3b8; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.75rem; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        h2 { font-size: 1.25rem; color: #818cf8; margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+        .btn { background: linear-gradient(135deg, #38bdf8, #818cf8); border: none; color: #0b0f19; font-weight: 700; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; transition: transform 0.2s; }
+        .btn:hover { transform: translateY(-1px); }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+        .product-card { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between; }
+        .details-box { background: #030712; border: 1px solid #1e293b; border-radius: 8px; padding: 1.25rem; font-family: 'Fira Code', monospace; color: #a5f3fc; font-size: 0.85rem; min-height: 100px; white-space: pre-wrap; }
+        .spinner { display: inline-block; width: 1rem; height: 1rem; border: 2px solid rgba(56,189,248,0.3); border-radius: 50%; border-top-color: #38bdf8; animation: spin 0.8s linear infinite; vertical-align: middle; margin-right: 0.5rem; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">Module 02</span>
+            <h1>Dynamic Routes &amp; Server-Side Data Fetching</h1>
+            <p class="subtitle">Next.js App Router dynamic segment matching <code>[id]/page.jsx</code>, React Suspense streaming (<code>loading.jsx</code>), and error handling.</p>
+        </header>
+
+        <div class="card">
+            <h2>Select Dynamic Product (/products/[id])</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div>
+                        <h4 style="color: #38bdf8;">Item #101</h4>
+                        <p style="color: #cbd5e1; font-size: 0.9rem; margin-top: 0.25rem;">Next.js Cloud Cluster</p>
+                        <p style="color: #34d399; font-weight: bold; margin-top: 0.25rem;">$29.00/mo</p>
+                    </div>
+                    <button class="btn" style="margin-top: 1rem;" onclick="simulateDynamicRoute('101', 'Next.js Cloud Cluster', 29)">Fetch /products/101</button>
+                </div>
+
+                <div class="product-card">
+                    <div>
+                        <h4 style="color: #38bdf8;">Item #102</h4>
+                        <p style="color: #cbd5e1; font-size: 0.9rem; margin-top: 0.25rem;">FastAPI Docker Fleet</p>
+                        <p style="color: #34d399; font-weight: bold; margin-top: 0.25rem;">$49.00/mo</p>
+                    </div>
+                    <button class="btn" style="margin-top: 1rem;" onclick="simulateDynamicRoute('102', 'FastAPI Docker Fleet', 49)">Fetch /products/102</button>
+                </div>
+
+                <div class="product-card">
+                    <div>
+                        <h4 style="color: #38bdf8;">Item #103</h4>
+                        <p style="color: #cbd5e1; font-size: 0.9rem; margin-top: 0.25rem;">PostgreSQL High-Availability</p>
+                        <p style="color: #34d399; font-weight: bold; margin-top: 0.25rem;">$89.00/mo</p>
+                    </div>
+                    <button class="btn" style="margin-top: 1rem;" onclick="simulateDynamicRoute('103', 'PostgreSQL High-Availability', 89)">Fetch /products/103</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Simulated Server Component Streaming View</h2>
+            <div id="routeStreamView" class="details-box">// Click any product above to stream dynamic data via [id]/page.jsx...</div>
+        </div>
+    </div>
+
+    <script>
+        function simulateDynamicRoute(id, name, price) {
+            const streamBox = document.getElementById('routeStreamView');
+            streamBox.innerHTML = '<span class="spinner"></span> Streaming route payload via React Suspense (loading.jsx active)...';
+
+            setTimeout(() => {
+                const jsonPayload = {
+                    route: `/products/${id}`,
+                    matchedParam: { id: id },
+                    renderedBy: "React Server Component (RSC)",
+                    data: {
+                        productId: parseInt(id),
+                        productName: name,
+                        priceUsd: price,
+                        status: "INSTOCK",
+                        timestamp: new Date().toISOString()
+                    }
+                };
+                streamBox.textContent = `// Rendered via app/products/[id]/page.jsx\n` + JSON.stringify(jsonPayload, null, 2);
+            }, 600);
+        }
+    </script>
+</body>
+</html>

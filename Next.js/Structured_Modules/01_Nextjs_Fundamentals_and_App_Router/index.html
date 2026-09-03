@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 01: Next.js Fundamentals & App Router Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0b0f19; color: #f8fafc; padding: 2.5rem 1rem; line-height: 1.6; }
+        .container { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        header { text-align: center; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(56,189,248,0.15); color: #38bdf8; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+        h1 { color: #38bdf8; font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { color: #94a3b8; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.75rem; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        h2 { font-size: 1.25rem; color: #818cf8; margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; }
+        .box { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 1.25rem; }
+        .box-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; font-weight: 600; }
+        .rsc-tag { font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 9999px; background: rgba(52,211,153,0.2); color: #34d399; font-weight: 700; }
+        .client-tag { font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 9999px; background: rgba(56,189,248,0.2); color: #38bdf8; font-weight: 700; }
+        .code-snippet { font-family: 'Fira Code', monospace; background: #030712; padding: 0.75rem; border-radius: 6px; font-size: 0.8rem; color: #a5f3fc; margin-top: 0.5rem; }
+        .btn { background: linear-gradient(135deg, #38bdf8, #818cf8); border: none; color: #0b0f19; font-weight: 700; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; transition: transform 0.2s; margin-top: 0.5rem; }
+        .btn:hover { transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">Module 01</span>
+            <h1>Next.js Fundamentals &amp; App Router</h1>
+            <p class="subtitle">File-system based routing, Root Layouts, React Server Components (RSC) vs Client Components boundary.</p>
+        </header>
+
+        <div class="card">
+            <h2>React Server Components (RSC) vs Client Components</h2>
+            <div class="grid-2">
+                <!-- Server Component -->
+                <div class="box">
+                    <div class="box-title">
+                        <span style="color: #34d399;">Server Component (Default)</span>
+                        <span class="rsc-tag">SERVER-ONLY</span>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 0.85rem;">
+                        Renders directly on the server. Zero JavaScript sent to the client bundle. Direct secure access to databases, filesystem, and private API keys.
+                    </p>
+                    <div class="code-snippet">
+// app/page.jsx (Server Component)<br>
+export default async function Page() {<br>
+&nbsp;&nbsp;const data = await db.query();<br>
+&nbsp;&nbsp;return &lt;h1&gt;Hello Server!&lt;/h1&gt;;<br>
+}
+                    </div>
+                </div>
+
+                <!-- Client Component -->
+                <div class="box">
+                    <div class="box-title">
+                        <span style="color: #38bdf8;">Client Component</span>
+                        <span class="client-tag">'use client'</span>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 0.85rem;">
+                        Opt-in for browser interactivity (state, effects, event listeners like onClick, browser APIs).
+                    </p>
+                    <div class="code-snippet">
+'use client';<br>
+import { useState } from 'react';<br>
+export default function Counter() {<br>
+&nbsp;&nbsp;const [count, setCount] = useState(0);<br>
+&nbsp;&nbsp;return &lt;button onClick=...&gt;{count}&lt;/button&gt;;<br>
+}
+                    </div>
+                    <button class="btn" id="liveCounterBtn" onclick="incrementCounter()">Client Interactivity: Clicked <span id="clickCount">0</span> times</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Next.js App Router File Convention</h2>
+            <div class="box" style="line-height: 1.8; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: #cbd5e1;">
+                📁 app/<br>
+                ├── 📄 layout.jsx &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #38bdf8;">// Persistent Root Layout wrapping all pages</span><br>
+                ├── 📄 page.jsx &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #34d399;">// Unique UI for route / (Server Component)</span><br>
+                ├── 📄 loading.jsx &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #fbbf24;">// Instant loading skeleton via React Suspense</span><br>
+                ├── 📄 not-found.jsx &nbsp;&nbsp;&nbsp;<span style="color: #f43f5e;">// Custom 404 UI</span><br>
+                └── 📁 dashboard/<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;├── 📄 layout.jsx &nbsp;&nbsp;<span style="color: #818cf8;">// Nested dashboard layout (sidebar + header)</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;└── 📄 page.jsx &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #34d399;">// Route: /dashboard</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let clicks = 0;
+        function incrementCounter() {
+            clicks++;
+            document.getElementById('clickCount').innerText = clicks;
+        }
+    </script>
+</body>
+</html>

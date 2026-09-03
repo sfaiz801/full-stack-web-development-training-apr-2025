@@ -1,13 +1,27 @@
-# 🚀 Next.js Projects Repository
+# 🚀 Next.js: Student Learning Journey
 
-This folder contains a comprehensive view of the student's journey across Next.js fundamentals, project structure, routing, layouts, and React Server Components to data fetching, dynamic routes, API routes, middleware, authentication, SEO and metadata, image optimization, caching (ISR), and deployment.
+A comprehensive structured curriculum mapping each student's journey from Next.js fundamentals, project structure, file-system routing, layouts, and React Server Components to server/client data fetching, dynamic routes, API route handlers, Edge middleware, authentication, SEO and metadata, image optimization, caching strategies (ISR), and cloud production deployment.
 
 ---
 
-## 🌟 Structured Student Learning Curriculum: [`Structured_Modules/`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules)
+## 🗺️ Curriculum Architecture
 
-| Module | Directory | Topics Covered | Key Demo / Script |
-|--------|-----------|----------------|-------------------|
+```
+Next.js/Structured_Modules/
+├── 01_Nextjs_Fundamentals_and_App_Router/        # App router structure, layout.jsx, page.jsx, React Server Components vs Client Components ('use client')
+├── 02_Dynamic_Routes_and_Data_Fetching/          # [id]/page.jsx dynamic segments, async/await RSC data fetching, loading.jsx, error.jsx
+├── 03_API_Route_Handlers_and_Middleware/         # route.js (GET, POST with NextResponse), Edge middleware.js auth/token interception & redirects
+├── 04_Authentication_and_Session_Management/     # Server-side cookies().get() token verification, session protection, Firebase Auth & JWT patterns
+├── 05_SEO_Metadata_and_Image_Optimization/       # static & dynamic generateMetadata(), OpenGraph social cards, next/image automatic WebP/AVIF pipeline
+└── 06_Caching_ISR_and_Production_Deployment/     # Next.js 4-tier cache, Incremental Static Regeneration (ISR), multi-stage production Docker container
+```
+
+---
+
+## 📂 Detailed Module Index
+
+| # | Module Folder | Key Topics Covered | Interactive Demo / Code |
+|---|---------------|--------------------|-------------------------|
 | **01** | [`01_Nextjs_Fundamentals_and_App_Router`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/01_Nextjs_Fundamentals_and_App_Router) | App Router conventions, Root Layout (`layout.jsx`), Server Components (RSC) vs Client Components (`'use client'`) | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/01_Nextjs_Fundamentals_and_App_Router/index.html), [`page.jsx`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/01_Nextjs_Fundamentals_and_App_Router/page.jsx), [`ClientCounter.jsx`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/01_Nextjs_Fundamentals_and_App_Router/ClientCounter.jsx) |
 | **02** | [`02_Dynamic_Routes_and_Data_Fetching`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/02_Dynamic_Routes_and_Data_Fetching) | Dynamic routes (`[id]/page.jsx`), async server-side data fetching, React Suspense (`loading.jsx`), and `error.jsx` boundary | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/02_Dynamic_Routes_and_Data_Fetching/index.html) & [`products/[id]/page.jsx`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/02_Dynamic_Routes_and_Data_Fetching/products/[id]/page.jsx) |
 | **03** | [`03_API_Route_Handlers_and_Middleware`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/03_API_Route_Handlers_and_Middleware) | Next.js API Route Handlers (`route.js` with `GET, POST, NextResponse`) and global Edge runtime `middleware.js` interception | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/03_API_Route_Handlers_and_Middleware/index.html), [`route.js`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/03_API_Route_Handlers_and_Middleware/route.js), [`middleware.js`](file:///d:/full-stack-web-development-training-apr-2024/Next.js/Structured_Modules/03_API_Route_Handlers_and_Middleware/middleware.js) |
@@ -17,50 +31,9 @@ This folder contains a comprehensive view of the student's journey across Next.j
 
 ---
 
-## 📂 Projects Directory
+## ⚡ Execution Instructions
 
-### 1. [lezato_restaurant_project](file:///d:/full-stack-web-development-training-apr-2024/Next.js/lezato_restaurant_project)
-**Description:** Lezato - Modern Full-Stack Restaurant & Food Delivery Admin Dashboard.
-- **GitHub Source:** [https://github.com/sfaiz801/lezato.git](https://github.com/sfaiz801/lezato.git)
-- **Tech Stack:** Next.js 16 (App Router), React 19, Redux Toolkit, React Bootstrap 5, ApexCharts, Recharts, SCSS.
-- **Key Routes & Features:**
-  - 📊 `/dashboard` - Central analytics overview, order revenue, customer counts & live chart summaries.
-  - 📦 `/orders` & `/order-details` - Live order management, delivery tracking & invoices.
-  - 🍔 `/menu` & `/add-menu` - Food menu catalog, ingredients & dish addition forms.
-  - 🏷️ `/categories` - Dish category management.
-  - 👥 `/customer` - Customer profiles & purchase history.
-  - 📈 `/analytics` - Detailed revenue charts (ApexCharts & Recharts).
-  - ⭐ `/review` - Customer feedback & star ratings.
-  - 📖 `/recipe-guide` - Kitchen cooking & preparation guides.
-  - 💬 `/messages` - Customer chat & inquiry center.
-  - 🔐 `/signin` & `/signup` - Authentication pages.
-
-### 2. [frontend-training-indixpert-faiz](file:///d:/full-stack-web-development-training-apr-2024/Next.js/frontend-training-indixpert-faiz)
-**Description:** Next.js Client Application with Firebase Authentication & Profile API Integration.
-- **GitHub Source:** [https://github.com/sfaiz801/frontend-training-indixpert-faiz.git](https://github.com/sfaiz801/frontend-training-indixpert-faiz.git) (branch: `faiz`)
-- **Tech Stack:** Next.js 16, React 19, Firebase Auth SDK, Bootstrap 5, Axios, React Hook Form, Yup/Zod.
-- **Key Features:**
-  - 🔐 Firebase Authentication (Email/Password & Google Sign-In)
-  - 📱 Phone number input & authentication validation
-  - 👤 Profile management connected with FastAPI backend (`backend-training-indixpert-faiz`)
-  - 🍞 Toast notifications & user-friendly error alerts
-
-### 3. [tasks](file:///d:/full-stack-web-development-training-apr-2024/Next.js/tasks)
-**Description:** Next.js App Router practice tasks (Product Catalog, Contact Form API, Team Directory, Sprint Planner).
-
----
-
-## 🚀 How to Run the Project
-
-1. Navigate to the project directory:
-   ```powershell
-   cd "d:\full-stack-web-development-training-apr-2024\Next.js\lezato_restaurant_project"
-   ```
-
-2. Start the development server:
-   ```powershell
-   npm run dev
-   ```
-
-3. Open in browser:
-   👉 **http://localhost:3000/**
+- **In-Browser Interactive Demos**:
+  Each module contains a standalone `index.html` file demonstrating the concepts interactively without requiring any build step. Simply open any `index.html` directly in the browser or via Live Server.
+- **Production Next.js Apps**:
+  All accompanying `.jsx`, `.js`, and `Dockerfile` code files reflect official Next.js 15 App Router architecture ready for deployment.
