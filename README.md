@@ -75,6 +75,15 @@ full-stack-web-development-training-apr-2024/
 * **`Database/`**: Production SQL schema (`01_schema.sql`), seed data (`02_sample_data.sql`), and advanced queries/stored procedures for PostgreSQL, MySQL, and AWS RDS.
 * **`Cloud/`**: Firebase Authentication setup and token verification guide connecting React/Next.js frontend with FastAPI backend.
 
+### 6. 💻 [C Language](file:///d:/full-stack-web-development-training-apr-2024/C%20Language)
+* **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/C%20Language/Structured_Modules)**: Progressive curriculum mapping each student's journey:
+  1. `01_Fundamentals_Variables_DataTypes`: Basic syntax, primitive data types, input/output (`printf`/`scanf`), constants & typecasting.
+  2. `02_Operators`: Arithmetic, relational, logical, bitwise operations (`&`, `|`, `^`, shifts), and ternary operators.
+  3. `03_Control_Structures`: `if-else` decision ladders, `switch-case` calculator menus, and loops (`for`, `while`, `do-while`).
+  4. `04_Functions`: Modular functions, call by value vs call by reference (pointers), and recursion (Factorial & Fibonacci).
+  5. `05_Arrays_and_Strings`: 1D/2D arrays, linear search, bubble sort, matrix math, strings & palindrome algorithms.
+* 60+ additional foundation practice scripts for logic building.
+
 ---
 
 ## ⚡ Quick Start: Running Projects Locally
