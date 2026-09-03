@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Amit",
+        "mobile_no": "6363636363",
+        "table_number": "2",
+        "date": "2024-11-20",
+        "time_slot": "10:00",
+        "persons": 3,
+        "status": "Canceled"
+    },
+    {
+        "id": 2,
+        "name": "faiz",
+        "mobile_no": "6466446644",
+        "table_number": "1",
+        "date": "2024-11-20",
+        "time_slot": "12:00",
+        "persons": 2,
+        "status": "Pending"
+    },
+    {
+        "id": 3,
+        "name": "Romit",
+        "mobile_no": "6363663363",
+        "table_number": "3",
+        "date": "2024-11-20",
+        "time_slot": "14:00",
+        "persons": 3,
+        "status": "Pending"
+    },
+    {
+        "id": 4,
+        "name": "Faiz",
+        "mobile_no": "9431255424",
+        "table_number": "17",
+        "date": "2024-11-22",
+        "time_slot": "10:00",
+        "persons": 5,
+        "status": "Pending"
+    },
+    {
+        "id": 5,
+        "name": "faiz",
+        "mobile_no": "9431255424",
+        "table_number": "17",
+        "date": "2024-11-25",
+        "time_slot": "10:00",
+        "persons": 5,
+        "status": "Pending"
+    },
+    {
+        "id": 6,
+        "name": "faiz",
+        "mobile_no": "9431255424",
+        "table_number": "20",
+        "date": "2025-11-28",
+        "time_slot": "12:00",
+        "persons": 10,
+        "status": "Pending"
+    },
+    {
+        "id": 7,
+        "name": "customer",
+        "mobile_no": "9431255424",
+        "table_number": "10",
+        "date": "2024-11-28",
+        "time_slot": "01:00",
+        "persons": 4,
+        "status": "Pending"
+    }
+]

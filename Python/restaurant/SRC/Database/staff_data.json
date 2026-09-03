@@ -1,0 +1,50 @@
+[
+    {
+        "id": "3b6d",
+        "name": "Amit Singh",
+        "email": "Amit@gmail.com",
+        "mobile_number": "6363546418",
+        "address": "Mirganj Bihar",
+        "role": "Manager",
+        "salary": 20000,
+        "employee_type": "Full-Time",
+        "date_of_joining": "2024-11-16",
+        "shift_preference": "day",
+        "gender": "Male",
+        "username": "AMIT999",
+        "password": "Amit@999",
+        "status": "Active"
+    },
+    {
+        "id": "118a",
+        "name": "Indra Mani",
+        "email": "Indra@gmail.com",
+        "mobile_number": "7767676767",
+        "address": "Bihar",
+        "role": "Admin",
+        "salary": 18000,
+        "employee_type": "Part-time",
+        "date_of_joining": "2024-11-16",
+        "shift_preference": "day",
+        "gender": "Male",
+        "username": "MANI9999",
+        "password": "Indra@99",
+        "status": "Inactive"
+    },
+    {
+        "id": "f264",
+        "name": "Faiz Siddique",
+        "email": "Faiz@gmail.com",
+        "mobile_number": "6565656565",
+        "address": "Bihar",
+        "role": "Staff",
+        "salary": 12000,
+        "employee_type": "Full-time",
+        "date_of_joining": "2024-11-16",
+        "shift_preference": "day",
+        "gender": "Male",
+        "username": "FAIZ9999",
+        "password": "Faiz@999",
+        "status": "Inactive"
+    }
+]

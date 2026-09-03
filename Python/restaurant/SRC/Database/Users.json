@@ -1,0 +1,52 @@
+[
+    {
+        "name": "faiz",
+        "date_of_birth": "08-12-2008",
+        "gender": "male",
+        "address": "Mirganj",
+        "email": "siddiquefaiz521@gmail.com",
+        "phone": "9431255424",
+        "username": "siddiquefaiz",
+        "password": "Faiz@2008",
+        "status": "active",
+        "role": "staff"
+    },
+    {
+        "name": "sharjina",
+        "date_of_birth": "10-12-2009",
+        "gender": "female",
+        "address": "Pindi",
+        "email": "sharjina@gmail.com",
+        "phone": "8090551517",
+        "username": "sharjina",
+        "password": "Sharjina@2009",
+        "status": "deactive",
+        "role": "customer"
+    },
+    {
+        "name": "faiz",
+        "date_of_birth": "10-10-2010",
+        "gender": "male",
+        "address": "Motiihari",
+        "email": "faiz@gmail.com",
+        "phone": "7412589630",
+        "username": "faiz",
+        "password": "Faiz@2010",
+        "status": "deactive",
+        "role": "customer",
+        "create_at": "2024-11-17 13:24:23.361786"
+    },
+    {
+        "name": "customer",
+        "date_of_birth": "01-01-2000",
+        "gender": "female",
+        "address": "mirganj",
+        "email": "customer@gmail.com",
+        "phone": "9431255424",
+        "username": "customer123",
+        "password": "Customer@123",
+        "status": "active",
+        "role": "customer",
+        "create_at": "2024-11-21 12:56:02.417962"
+    }
+]

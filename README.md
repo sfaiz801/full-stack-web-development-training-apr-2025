@@ -67,6 +67,7 @@ full-stack-web-development-training-apr-2024/
 * 15 standalone interactive UI widgets including Glassmorphism Digital Clocks, Neumorphic Calculators, SaaS Pricing Tables, Animated Auth Modals, Crypto Trackers, and E-commerce product cards.
 
 ### 4. 🐍 [Python](file:///d:/full-stack-web-development-training-apr-2024/Python)
+* **[restaurant](file:///d:/full-stack-web-development-training-apr-2024/Python/restaurant)**: Red Heaven Restaurant Management System with multi-role access control (Admin, Staff, Customer), order management, billing, and reservation booking.
 * 25 modular Python programs ranging from Student & Bank Management Systems, ATM Simulators, and Hotel/Medical Billing to Interactive Games and File Analyzers.
 
 ### 5. ⚡ [API, Database & Cloud](file:///d:/full-stack-web-development-training-apr-2024/API%2CDatabase%20&%20Cloud)

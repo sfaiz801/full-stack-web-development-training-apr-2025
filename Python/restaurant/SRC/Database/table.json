@@ -1,0 +1,124 @@
+{
+    "tables": [
+        {
+            "number": 1,
+            "type": "round",
+            "capacity": 2,
+            "status": "available"
+        },
+        {
+            "number": 2,
+            "type": "round",
+            "capacity": 4,
+            "status": "available"
+        },
+        {
+            "number": 3,
+            "type": "round",
+            "capacity": 4,
+            "status": "booked"
+        },
+        {
+            "number": 4,
+            "type": "rectangular",
+            "capacity": 6,
+            "status": "available"
+        },
+        {
+            "number": 5,
+            "type": "rectangular",
+            "capacity": 4,
+            "status": "available"
+        },
+        {
+            "number": 6,
+            "type": "rectangular",
+            "capacity": 4,
+            "status": "available"
+        },
+        {
+            "number": 7,
+            "type": "square",
+            "capacity": 2,
+            "status": "available"
+        },
+        {
+            "number": 8,
+            "type": "square",
+            "capacity": 4,
+            "status": "available"
+        },
+        {
+            "number": 9,
+            "type": "booth",
+            "capacity": 2,
+            "status": "available"
+        },
+        {
+            "number": 10,
+            "type": "high-top",
+            "capacity": 4,
+            "status": "booked"
+        },
+        {
+            "number": 11,
+            "type": "oval",
+            "capacity": 6,
+            "status": "available"
+        },
+        {
+            "number": 12,
+            "type": "circular",
+            "capacity": 4,
+            "status": "available"
+        },
+        {
+            "number": 13,
+            "type": "long",
+            "capacity": 8,
+            "status": "available"
+        },
+        {
+            "number": 14,
+            "type": "pub",
+            "capacity": 4,
+            "status": "available"
+        },
+        {
+            "number": 15,
+            "type": "family",
+            "capacity": 6,
+            "status": "available"
+        },
+        {
+            "number": 16,
+            "type": "bistro",
+            "capacity": 2,
+            "status": "available"
+        },
+        {
+            "number": 17,
+            "type": "picnic",
+            "capacity": 6,
+            "status": "booked"
+        },
+        {
+            "number": 18,
+            "type": "cocktail",
+            "capacity": 4,
+            "status": "available"
+        },
+        {
+            "number": 19,
+            "type": "deck",
+            "capacity": 4,
+            "status": "available"
+        },
+        {
+            "number": 20,
+            "type": "garden",
+            "capacity": 4,
+            "status": "booked"
+        }
+    ]
+}

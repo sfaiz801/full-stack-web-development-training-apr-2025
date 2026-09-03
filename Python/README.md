@@ -1,6 +1,16 @@
 # 🐍 Python Practice & Project Repository
 
-Yeh folder Python practice aur real-world mini projects ke liye banaya gaya hai. Isme beginner se intermediate level ke 25 essential interactive console projects hain.
+Yeh folder Python practice aur real-world mini projects ke liye banaya gaya hai. Isme major capstone project aur beginner se intermediate level ke 25 essential interactive console projects hain.
+
+---
+
+## 🌟 Major Project: [Red Heaven Restaurant Management System](file:///d:/full-stack-web-development-training-apr-2024/Python/restaurant)
+A comprehensive, multi-role restaurant management application with 3 user roles:
+1. **Admin**: Profile management, employee hiring/records, financial reports, menu configuration.
+2. **Staff**: Order processing, table reservations, live billing, and kitchen updates.
+3. **Customer**: Authentication (Login/Signup), browsing food menu, placing dining/takeaway orders, and bill generation.
+- **Source Code**: [`Python/restaurant/`](file:///d:/full-stack-web-development-training-apr-2024/Python/restaurant)
+- **Run**: `cd restaurant; python main.py`
 
 ---
 

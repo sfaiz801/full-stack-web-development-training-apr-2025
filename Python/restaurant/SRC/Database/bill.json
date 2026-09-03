@@ -1,0 +1,29 @@
+[
+    {
+        "invoice_number": "INV-32577",
+        "order_id": "TA-2030",
+        "customer_name": "Amit",
+        "order_type": "Take Away",
+        "items": [
+            {
+                "item_id": 12,
+                "name": "Fish Fry",
+                "portion": "half",
+                "price": 150,
+                "quantity": 1
+            },
+            {
+                "item_id": 1,
+                "name": "Vegetable Biryani",
+                "portion": "full",
+                "price": 150,
+                "quantity": 2
+            }
+        ],
+        "subtotal": 450,
+        "gst": 81.0,
+        "total_amount": 531.0,
+        "date_time": "2024-11-20 11:19:13",
+        "payment_reference": "UPI-3525640790"
+    }
+]

@@ -1,0 +1,117 @@
+[
+    {
+        "order_id": "D-1",
+        "order_type": "Dining",
+        "items": [
+            {
+                "item_id": 88,
+                "name": "Chana Bhaji",
+                "portion": "half",
+                "price": 40,
+                "quantity": 5
+            }
+        ],
+        "status": "Canceled"
+    },
+    {
+        "order_id": "TA-3369",
+        "order_type": "Take Away",
+        "items": [
+            {
+                "item_id": 12,
+                "name": "Fish Fry",
+                "portion": "half",
+                "price": 150,
+                "quantity": 2
+            }
+        ],
+        "status": "Confirmed"
+    },
+    {
+        "order_id": "TA-2030",
+        "order_type": "Take Away",
+        "items": [
+            {
+                "item_id": 12,
+                "name": "Fish Fry",
+                "portion": "half",
+                "price": 150,
+                "quantity": 1
+            },
+            {
+                "item_id": 1,
+                "name": "Vegetable Biryani",
+                "portion": "full",
+                "price": 150,
+                "quantity": 2
+            }
+        ],
+        "status": "Confirmed"
+    },
+    {
+        "order_id": "TA-9503",
+        "order_type": "Take Away",
+        "items": [
+            {
+                "item_id": 13,
+                "name": "Mutton Rogan Josh",
+                "portion": "full",
+                "price": 400,
+                "quantity": 2
+            }
+        ],
+        "status": "Pending"
+    },
+    {
+        "order_id": "TA-2818",
+        "order_type": "1",
+        "status": "Pending",
+        "items": [],
+        "total_price": 0
+    },
+    {
+        "order_id": "D-1390",
+        "order_type": "2",
+        "status": "Canceled",
+        "items": [
+            {
+                "name": "Coconut Water",
+                "category": "water",
+                "portion/size": "one_liter",
+                "quantity": 2,
+                "price": 60
+            }
+        ],
+        "total_price": 60
+    },
+    {
+        "order_id": "D-6318",
+        "order_type": "2",
+        "status": "Pending",
+        "items": [
+            {
+                "name": "Potato Chips",
+                "category": "snacks",
+                "portion/size": "100g",
+                "quantity": 5,
+                "price": 200
+            }
+        ],
+        "total_price": 200
+    },
+    {
+        "order_id": "D-1498",
+        "order_type": "2",
+        "status": "Pending",
+        "items": [
+            {
+                "name": "Chicken Curry",
+                "category": "non_veg",
+                "portion/size": "half",
+                "quantity": 2,
+                "price": 250
+            }
+        ],
+        "total_price": 250
+    }
+]
