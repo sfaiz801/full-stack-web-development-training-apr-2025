@@ -64,7 +64,19 @@ full-stack-web-development-training-apr-2024/
 * **[02_redux_toolkit_mastery_hub](file:///d:/full-stack-web-development-training-apr-2024/React%20&%20Redux/02_redux_toolkit_mastery_hub)**: 6 comprehensive Redux Toolkit slices (Counter, Todos, Shopping Cart, Auth Session, Async Thunk API Posts, Budget Ledger) with an in-browser Live Store State Inspector.
 
 ### 3. 🎨 [HTML & CSS](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS)
-* 15 standalone interactive UI widgets including Glassmorphism Digital Clocks, Neumorphic Calculators, SaaS Pricing Tables, Animated Auth Modals, Crypto Trackers, and E-commerce product cards.
+* **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules)**: Progressive curriculum mapping each student's journey across 11 core modules:
+  1. `01_HTML_Fundamentals_and_Structure`: HTML5 boilerplate, metadata, text hierarchy, lists, and anchors.
+  2. `02_Semantic_HTML5_Architecture`: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
+  3. `03_HTML_Forms_and_Validation`: Comprehensive input types, `<fieldset>`, `<legend>`, and native validation.
+  4. `04_HTML_Tables_and_Data`: Semantic tabular markup (`<thead>`, `<tbody>`, `<tfoot>`), spanning (`colspan`, `rowspan`), responsive tables.
+  5. `05_HTML_Multimedia_and_Embeds`: Native `<video>` & `<audio>` players, inline vector SVGs, and responsive iframes.
+  6. `06_CSS_Selectors_and_Box_Model`: Visual box model (margin, border, padding, content) and pseudo-classes/elements.
+  7. `07_CSS_Typography_and_Theming`: Google Fonts (`Outfit`, `Inter`), fluid font scales, text clipping gradients, CSS variables.
+  8. `08_CSS_Flexbox_Mastery`: 1D alignment, main/cross axis, gap, flex-wrap, and proportional flex-grow.
+  9. `09_CSS_Grid_System`: 2D Grid layouts, fluid `repeat(auto-fit)` repeaters, and `grid-template-areas`.
+  10. `10_Responsive_Design_Media_Queries`: Mobile-first approach, `@media` breakpoints (640px, 1024px), fluid `clamp()`.
+  11. `11_CSS_Animations_and_Modern_Styling`: `@keyframes` animations, 3D hover transforms, and Glassmorphism blur.
+* 15 standalone interactive UI projects (Glassmorphism Clock, Neumorphic Calculator, SaaS Pricing, etc.).
 
 ### 4. 🐍 [Python](file:///d:/full-stack-web-development-training-apr-2024/Python)
 * **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules)**: Comprehensive student learning journey across 9 core modules:

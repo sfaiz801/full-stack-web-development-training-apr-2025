@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 08: CSS Flexbox Layout Mastery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f8fafc; padding: 2rem 1rem; line-height: 1.6; }
+        .container { max-width: 950px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        header { text-align: center; }
+        h1 { color: #38bdf8; font-size: 2rem; }
+        .subtitle { color: #94a3b8; margin-top: 0.5rem; }
+        
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.75rem; }
+        h2 { font-size: 1.3rem; color: #818cf8; margin-bottom: 0.75rem; }
+        
+        /* FLEX CONTAINER DEMOS */
+        .flex-box {
+            background: #0b0f19;
+            border: 2px dashed #475569;
+            border-radius: 8px;
+            padding: 1.25rem;
+            display: flex;
+            gap: 1rem;
+            min-height: 140px;
+        }
+        .flex-item {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            color: #0f172a;
+            font-weight: 700;
+            padding: 1.25rem 1.5rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+        }
+
+        /* 1. Space Between & Center */
+        .space-between { justify-content: space-between; align-items: center; }
+        
+        /* 2. Flex Wrap */
+        .wrap-demo { flex-wrap: wrap; justify-content: center; }
+
+        /* 3. Flex Grow */
+        .item-grow-1 { flex-grow: 1; background: #c084fc; color: #fff; }
+        .item-grow-2 { flex-grow: 2; background: #22c55e; color: #0f172a; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Module 08: CSS Flexbox Layout Mastery</h1>
+            <p class="subtitle">Complete control over main axis (justify-content), cross axis (align-items), gap, and flex-grow dynamics.</p>
+        </header>
+
+        <!-- DEMO 1: JUSTIFY-CONTENT SPACE-BETWEEN -->
+        <div class="card">
+            <h2>1. Main Axis Distribution: justify-content: space-between; align-items: center;</h2>
+            <div class="flex-box space-between">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+        </div>
+
+        <!-- DEMO 2: FLEX GROW RATIOS -->
+        <div class="card">
+            <h2>2. Dynamic Proportional Growth: flex-grow</h2>
+            <div class="flex-box">
+                <div class="flex-item">Base (0)</div>
+                <div class="flex-item item-grow-1">flex-grow: 1</div>
+                <div class="flex-item item-grow-2">flex-grow: 2 (2x share)</div>
+            </div>
+        </div>
+
+        <!-- DEMO 3: FLEX WRAP -->
+        <div class="card">
+            <h2>3. Multi-Row Wrapping: flex-wrap: wrap; gap: 1rem;</h2>
+            <div class="flex-box wrap-demo">
+                <div class="flex-item">Card 1</div>
+                <div class="flex-item">Card 2</div>
+                <div class="flex-item">Card 3</div>
+                <div class="flex-item">Card 4</div>
+                <div class="flex-item">Card 5</div>
+                <div class="flex-item">Card 6</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

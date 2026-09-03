@@ -1,10 +1,28 @@
 # 🎨 HTML & CSS Practice Projects & UI Components
 
-Modern, visually stunning, glassmorphic aur responsive HTML5 & CSS3 practice projects. Har ek project self-contained hai aur bina kisi server ke directly browser me open hokar chalta hai!
+This folder contains a complete, progressive HTML5 & CSS3 curriculum mapping each student's journey from document structure, semantics, forms, tables, and multimedia to modern CSS selectors, box model, typography, Flexbox, Grid, responsive design, and animations, alongside 15 interactive UI projects.
 
 ---
 
-## 📂 Project Directory (15 Modern UI Projects)
+## 🌟 Structured Student Learning Curriculum: [`Structured_Modules/`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules)
+
+| Module | Directory | Topics Covered | Key Demo |
+|--------|-----------|----------------|----------|
+| **01** | [`01_HTML_Fundamentals_and_Structure`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/01_HTML_Fundamentals_and_Structure) | HTML5 boilerplate, metadata, text formatting, lists (`<ul>`, `<ol>`), links (`<a>`) | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/01_HTML_Fundamentals_and_Structure/index.html) |
+| **02** | [`02_Semantic_HTML5_Architecture`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/02_Semantic_HTML5_Architecture) | Structural semantics (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<figure>`) | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/02_Semantic_HTML5_Architecture/index.html) |
+| **03** | [`03_HTML_Forms_and_Validation`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/03_HTML_Forms_and_Validation) | Input types, `<fieldset>`, `<legend>`, select options, client-side validation | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/03_HTML_Forms_and_Validation/index.html) |
+| **04** | [`04_HTML_Tables_and_Data`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/04_HTML_Tables_and_Data) | Tabular markup (`<thead>`, `<tbody>`, `<tfoot>`), spanning (`colspan`, `rowspan`), responsive tables | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/04_HTML_Tables_and_Data/index.html) |
+| **05** | [`05_HTML_Multimedia_and_Embeds`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/05_HTML_Multimedia_and_Embeds) | Native `<video>` & `<audio>` players, inline `<svg>` vector shapes, 16:9 responsive `<iframe>` | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/05_HTML_Multimedia_and_Embeds/index.html) |
+| **06** | [`06_CSS_Selectors_and_Box_Model`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/06_CSS_Selectors_and_Box_Model) | Visual box model diagram (margin, border, padding, content), `:hover`, `:nth-child`, `::before` | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/06_CSS_Selectors_and_Box_Model/index.html) |
+| **07** | [`07_CSS_Typography_and_Theming`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/07_CSS_Typography_and_Theming) | Google Fonts (`Outfit`, `Inter`), modular type scales, text clipping gradients, CSS variables (`:root`) | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/07_CSS_Typography_and_Theming/index.html) |
+| **08** | [`08_CSS_Flexbox_Mastery`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/08_CSS_Flexbox_Mastery) | 1D Flexbox alignment: `justify-content`, `align-items`, `gap`, `flex-wrap`, proportional `flex-grow` | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/08_CSS_Flexbox_Mastery/index.html) |
+| **09** | [`09_CSS_Grid_System`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/09_CSS_Grid_System) | 2D Grid layouts: auto-fit fluid repeater cards and Holy Grail layout using `grid-template-areas` | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/09_CSS_Grid_System/index.html) |
+| **10** | [`10_Responsive_Design_Media_Queries`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/10_Responsive_Design_Media_Queries) | Mobile-first design, fluid `clamp()` values, `@media` breakpoints (640px tablet, 1024px desktop) | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/10_Responsive_Design_Media_Queries/index.html) |
+| **11** | [`11_CSS_Animations_and_Modern_Styling`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/11_CSS_Animations_and_Modern_Styling) | `@keyframes` glowing radar pulse, hardware-accelerated 3D hover elevations, Glassmorphism blur | [`index.html`](file:///d:/full-stack-web-development-training-apr-2024/HTML%20&%20CSS/Structured_Modules/11_CSS_Animations_and_Modern_Styling/index.html) |
+
+---
+
+## 📂 Additional Practice Projects (15 Modern UI Projects)
 
 | # | File Name | Topics & Concepts | Description |
 |---|-----------|-------------------|-------------|

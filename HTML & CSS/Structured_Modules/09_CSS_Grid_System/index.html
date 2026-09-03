@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 09: CSS Grid Layout Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0b0f19; color: #f8fafc; padding: 2rem 1rem; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        header { text-align: center; }
+        h1 { color: #38bdf8; font-size: 2rem; }
+        .subtitle { color: #94a3b8; margin-top: 0.5rem; }
+        
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.75rem; }
+        h2 { font-size: 1.3rem; color: #818cf8; margin-bottom: 1rem; }
+
+        /* 1. AUTO-FIT RESPONSIVE DASHBOARD GRID */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+        .stat-card {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .stat-card .val { font-size: 1.8rem; font-weight: 700; color: #38bdf8; }
+        .stat-card .label { font-size: 0.85rem; color: #94a3b8; }
+
+        /* 2. GRID TEMPLATE AREAS HOLY GRAIL LAYOUT */
+        .holy-grail {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "sidebar content"
+                "footer footer";
+            grid-template-columns: 240px 1fr;
+            grid-template-rows: 60px minmax(180px, auto) 50px;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 700px) {
+            .holy-grail {
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "content"
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+        }
+        .area-header { grid-area: header; background: #38bdf8; color: #0b0f19; font-weight: 700; display: flex; align-items: center; justify-content: center; border-radius: 6px; }
+        .area-sidebar { grid-area: sidebar; background: #818cf8; color: #0b0f19; font-weight: 600; padding: 1rem; border-radius: 6px; }
+        .area-content { grid-area: content; background: #0f172a; border: 1px solid #334155; padding: 1rem; border-radius: 6px; }
+        .area-footer { grid-area: footer; background: #334155; color: #cbd5e1; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Module 09: CSS Grid Layout Architecture</h1>
+            <p class="subtitle">Two-dimensional layout power: Auto-fit fluid repeaters and named grid template areas.</p>
+        </header>
+
+        <!-- DEMO 1: FLUID DASHBOARD CARDS -->
+        <div class="card">
+            <h2>1. Fluid Dashboard: grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))</h2>
+            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1rem;">Resize your window — cards wrap and stretch automatically without a single media query!</p>
+            <div class="dashboard-grid">
+                <div class="stat-card"><span class="val">1,248</span><span class="label">Active Students</span></div>
+                <div class="stat-card"><span class="val">98.4%</span><span class="label">Pass Rate</span></div>
+                <div class="stat-card"><span class="val">15</span><span class="label">Modules Mastered</span></div>
+                <div class="stat-card"><span class="val">4.9/5</span><span class="label">Cohort Rating</span></div>
+            </div>
+        </div>
+
+        <!-- DEMO 2: NAMED GRID TEMPLATE AREAS -->
+        <div class="card">
+            <h2>2. Named Layout Areas: grid-template-areas</h2>
+            <div class="holy-grail">
+                <div class="area-header">grid-area: header</div>
+                <div class="area-sidebar">grid-area: sidebar (240px)</div>
+                <div class="area-content">grid-area: content (1fr flexible main zone)</div>
+                <div class="area-footer">grid-area: footer</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

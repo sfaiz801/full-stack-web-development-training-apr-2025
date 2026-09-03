@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 04: HTML Tables & Structured Tabular Data</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0b0f19; color: #f8fafc; padding: 2rem 1rem; line-height: 1.6; }
+        .container { max-width: 950px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 2rem; }
+        h1 { color: #38bdf8; font-size: 2rem; }
+        .subtitle { color: #94a3b8; margin-top: 0.5rem; }
+        
+        .table-responsive {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            overflow-x: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        th, td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #334155;
+        }
+        thead th {
+            background: #0f172a;
+            color: #38bdf8;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+        tbody tr:hover { background: rgba(56, 189, 248, 0.05); }
+        tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        
+        tfoot {
+            background: #0f172a;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-success { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); }
+        .badge-warning { background: rgba(234, 179, 8, 0.2); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Module 04: HTML Tables & Tabular Data</h1>
+            <p class="subtitle">Demonstrating semantic table anatomy (thead, tbody, tfoot), cell spanning (colspan/rowspan), and responsive styling.</p>
+        </header>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Batch Code</th>
+                        <th>Student Name</th>
+                        <th>Module</th>
+                        <th>Score</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" style="font-weight: 600; color: #818cf8; vertical-align: middle;">FS-APR-25</td>
+                        <td>Mohammad Faiz</td>
+                        <td>Full Stack Web Dev</td>
+                        <td>94%</td>
+                        <td><span class="badge badge-success">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ayaan Ali</td>
+                        <td>Backend Architecture</td>
+                        <td>88%</td>
+                        <td><span class="badge badge-success">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="font-weight: 600; color: #818cf8; vertical-align: middle;">FS-MAY-25</td>
+                        <td>Rohit Sharma</td>
+                        <td>Python Data Structures</td>
+                        <td>72%</td>
+                        <td><span class="badge badge-warning">In Progress</span></td>
+                    </tr>
+                    <tr>
+                        <td>Pooja Verma</td>
+                        <td>FastAPI & PostgreSQL</td>
+                        <td>81%</td>
+                        <td><span class="badge badge-success">Completed</span></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style="text-align: right;">Average Cohort Score:</td>
+                        <td colspan="2" style="color: #38bdf8;">83.75% (Passing Criteria Met)</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

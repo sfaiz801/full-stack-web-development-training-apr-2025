@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Semantic HTML5 Architecture and Modern Web Layout Elements">
+    <title>Module 02: Semantic HTML5 Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0b0f19; color: #f1f5f9; padding: 2rem 1rem; line-height: 1.6; }
+        .wrapper { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+        
+        /* Semantic visual color coding */
+        header.semantic-box { background: rgba(56, 189, 248, 0.1); border: 2px dashed #38bdf8; border-radius: 10px; padding: 1.5rem; }
+        nav.semantic-box { background: rgba(129, 140, 248, 0.1); border: 2px dashed #818cf8; border-radius: 8px; padding: 1rem; margin-top: 1rem; display: flex; gap: 1.5rem; }
+        nav a { color: #818cf8; text-decoration: none; font-weight: 500; }
+        nav a:hover { text-decoration: underline; }
+        
+        .layout-grid { display: grid; grid-template-columns: 2.5fr 1fr; gap: 1.5rem; }
+        @media (max-width: 768px) { .layout-grid { grid-template-columns: 1fr; } }
+        
+        main.semantic-box { background: rgba(34, 197, 94, 0.08); border: 2px dashed #22c55e; border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+        section.semantic-box { background: rgba(245, 158, 11, 0.08); border: 2px dashed #f59e0b; border-radius: 8px; padding: 1.25rem; }
+        article.semantic-box { background: rgba(236, 72, 153, 0.08); border: 2px dashed #ec4899; border-radius: 8px; padding: 1.25rem; }
+        aside.semantic-box { background: rgba(168, 85, 247, 0.08); border: 2px dashed #a855f7; border-radius: 10px; padding: 1.5rem; }
+        footer.semantic-box { background: rgba(148, 163, 184, 0.1); border: 2px dashed #94a3b8; border-radius: 10px; padding: 1.5rem; text-align: center; }
+
+        .tag-label { font-family: 'Fira Code', monospace; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.5rem; }
+        .tag-header { background: #38bdf8; color: #0b0f19; }
+        .tag-nav { background: #818cf8; color: #0b0f19; }
+        .tag-main { background: #22c55e; color: #0b0f19; }
+        .tag-section { background: #f59e0b; color: #0b0f19; }
+        .tag-article { background: #ec4899; color: #0b0f19; }
+        .tag-aside { background: #a855f7; color: #0b0f19; }
+        .tag-footer { background: #94a3b8; color: #0b0f19; }
+
+        figure { background: #1e293b; padding: 1rem; border-radius: 8px; text-align: center; margin-top: 1rem; }
+        figcaption { font-size: 0.85rem; color: #94a3b8; margin-top: 0.5rem; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- HEADER -->
+        <header class="semantic-box">
+            <span class="tag-label tag-header">&lt;header&gt; Element</span>
+            <h1>Module 02: Semantic HTML5 Architecture</h1>
+            <p>Semantic tags give meaning to the web page structure for search engines, screen readers, and developers.</p>
+            
+            <!-- NAV -->
+            <nav class="semantic-box">
+                <span class="tag-label tag-nav">&lt;nav&gt;</span>
+                <a href="#overview">Overview</a>
+                <a href="#articles">Articles</a>
+                <a href="#resources">Resources</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- TWO COLUMN LAYOUT (MAIN & ASIDE) -->
+        <div class="layout-grid">
+            <!-- MAIN -->
+            <main class="semantic-box">
+                <span class="tag-label tag-main">&lt;main&gt; Primary Document Content</span>
+
+                <!-- SECTION -->
+                <section class="semantic-box" id="overview">
+                    <span class="tag-label tag-section">&lt;section&gt; Thematic Grouping</span>
+                    <h2>Why Semantic HTML5 Matters</h2>
+                    <p>Instead of relying on generic <code>&lt;div&gt;</code> tags, HTML5 introduces elements that accurately describe their intent, boosting SEO and accessibility compliance.</p>
+                </section>
+
+                <!-- ARTICLE -->
+                <article class="semantic-box" id="articles">
+                    <span class="tag-label tag-article">&lt;article&gt; Self-Contained Composition</span>
+                    <h2>Building Accessible Web Applications</h2>
+                    <p>Articles can be independently distributed or syndicated (e.g. blog posts, forum replies, news updates).</p>
+                    <figure>
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        <figcaption>&lt;figure&gt; & &lt;figcaption&gt; representing structured diagram illustration.</figcaption>
+                    </figure>
+                </article>
+            </main>
+
+            <!-- ASIDE -->
+            <aside class="semantic-box" id="resources">
+                <span class="tag-label tag-aside">&lt;aside&gt; Complementary Sidebar</span>
+                <h3>Quick Resources</h3>
+                <p>Content indirectly related to main content (author bio, advertisements, related links).</p>
+                <ul style="margin: 1rem 0 0 1.25rem; font-size: 0.9rem; color: #cbd5e1;">
+                    <li>W3C HTML5 Specification</li>
+                    <li>ARIA Roles & Landmarks</li>
+                    <li>Accessibility Tree (a11y)</li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="semantic-box" id="contact">
+            <span class="tag-label tag-footer">&lt;footer&gt; Element</span>
+            <p>&copy; 2025 Full Stack Web Development Training Program. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

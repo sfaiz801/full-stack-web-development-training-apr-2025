@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 06: CSS Selectors & The Box Model</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f8fafc; padding: 2rem 1rem; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        header { text-align: center; }
+        h1 { color: #38bdf8; font-size: 2rem; }
+        .subtitle { color: #94a3b8; margin-top: 0.5rem; }
+        
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.75rem; }
+        h2 { font-size: 1.3rem; color: #818cf8; margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+
+        /* VISUAL BOX MODEL DIAGRAM */
+        .box-model-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+        }
+        .layer-margin {
+            background: rgba(249, 115, 22, 0.15);
+            border: 2px dashed #f97316;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+        }
+        .layer-border {
+            background: rgba(234, 179, 8, 0.15);
+            border: 2px dashed #eab308;
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+        }
+        .layer-padding {
+            background: rgba(34, 197, 94, 0.15);
+            border: 2px dashed #22c55e;
+            padding: 2rem;
+            border-radius: 6px;
+            position: relative;
+        }
+        .layer-content {
+            background: #38bdf8;
+            color: #0f172a;
+            font-weight: 700;
+            padding: 1.5rem 2rem;
+            border-radius: 4px;
+        }
+        .layer-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* SELECTORS SHOWCASE */
+        .selector-demo { display: flex; flex-direction: column; gap: 0.75rem; }
+        .item { background: #0f172a; border: 1px solid #334155; padding: 0.75rem 1rem; border-radius: 6px; transition: all 0.2s; position: relative; }
+        
+        /* Pseudo-class: hover */
+        .item:hover { border-color: #38bdf8; transform: translateX(6px); background: #1e293b; }
+        
+        /* Pseudo-class: nth-child(even) */
+        .item:nth-child(even) { border-left: 4px solid #818cf8; }
+
+        /* Pseudo-element: ::before badge */
+        .special::before {
+            content: "FEATURED";
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ec4899;
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Module 06: CSS Selectors & The Box Model</h1>
+            <p class="subtitle">Understanding margin, border, padding, content calculation and advanced pseudo-selectors.</p>
+        </header>
+
+        <!-- 1. THE BOX MODEL DIAGRAM -->
+        <div class="card">
+            <h2>1. Visual Interactive Box Model</h2>
+            <div class="box-model-container">
+                <div class="layer-margin">
+                    <span class="layer-label" style="color: #f97316;">Margin (External Space)</span>
+                    <div class="layer-border">
+                        <span class="layer-label" style="color: #eab308;">Border (Stroke Boundary)</span>
+                        <div class="layer-padding">
+                            <span class="layer-label" style="color: #22c55e;">Padding (Internal Clearance)</span>
+                            <div class="layer-content">
+                                Content (Width x Height)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="color: #94a3b8; font-size: 0.9rem; text-align: center; margin-top: 1rem;">
+                Applied standard: <code>box-sizing: border-box;</code> ensuring padding and border are included within stated width!
+            </p>
+        </div>
+
+        <!-- 2. SELECTORS & PSEUDO-CLASSES -->
+        <div class="card">
+            <h2>2. Pseudo-Classes & Pseudo-Elements in Action</h2>
+            <div class="selector-demo">
+                <div class="item">Item 1: Standard item (hover over me!)</div>
+                <div class="item">Item 2: Styled via <code>:nth-child(even)</code> purple indicator</div>
+                <div class="item special">Item 3: Styled via <code>::before</code> pseudo-element badge</div>
+                <div class="item">Item 4: Interactive card with smooth translation transition</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

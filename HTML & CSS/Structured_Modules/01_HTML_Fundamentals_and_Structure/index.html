@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML Fundamentals & Document Structure practice module">
+    <title>Module 01: HTML Fundamentals & Document Structure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.85);
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --code-bg: #030712;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 2.5rem; }
+        h1 { font-size: 2.25rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(56, 189, 248, 0.15); color: var(--primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        h2 { font-size: 1.4rem; color: var(--secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.1rem; color: var(--text-main); margin: 1rem 0 0.5rem; }
+        p { color: var(--text-muted); margin-bottom: 1rem; }
+        code { font-family: 'Fira Code', monospace; background: var(--code-bg); color: #f43f5e; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.9rem; }
+        pre { font-family: 'Fira Code', monospace; background: var(--code-bg); padding: 1rem; border-radius: 8px; overflow-x: auto; color: #a5f3fc; margin-bottom: 1rem; border: 1px solid #1e293b; }
+        ul, ol { margin-left: 1.5rem; color: var(--text-muted); margin-bottom: 1rem; }
+        li { margin-bottom: 0.4rem; }
+        a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .tag { background: #1e293b; border: 1px solid var(--border-color); padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.85rem; color: #cbd5e1; font-family: 'Fira Code', monospace; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">Module 01</span>
+            <h1>HTML Fundamentals & Document Structure</h1>
+            <p class="subtitle">Anatomy of an HTML5 document, core syntax rules, metadata, and text hierarchy.</p>
+        </header>
+
+        <!-- Section 1: Boilerplate Anatomy -->
+        <div class="card">
+            <h2>1. Anatomy of an HTML5 Document</h2>
+            <p>Every modern web page begins with the standard HTML5 boilerplate containing essential metadata and viewport definitions.</p>
+            <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            <div class="tag-list">
+                <span class="tag">&lt;!DOCTYPE html&gt;</span>
+                <span class="tag">&lt;html lang="en"&gt;</span>
+                <span class="tag">&lt;head&gt;</span>
+                <span class="tag">&lt;meta charset="UTF-8"&gt;</span>
+                <span class="tag">&lt;meta viewport&gt;</span>
+                <span class="tag">&lt;body&gt;</span>
+            </div>
+        </div>
+
+        <!-- Section 2: Heading Hierarchy -->
+        <div class="card">
+            <h2>2. Headings & Typography Hierarchy</h2>
+            <p>HTML provides 6 levels of headings to communicate logical hierarchy for accessibility and SEO:</p>
+            <h1 style="font-size: 1.8rem; margin: 0.5rem 0;">Heading 1 (&lt;h1&gt;) - Primary Page Subject</h1>
+            <h2 style="font-size: 1.4rem; margin: 0.5rem 0; border: none; padding: 0;">Heading 2 (&lt;h2&gt;) - Major Topic Section</h2>
+            <h3 style="font-size: 1.15rem; margin: 0.5rem 0;">Heading 3 (&lt;h3&gt;) - Sub-topic Component</h3>
+            <h4 style="font-size: 1.0rem; color: var(--text-muted); margin: 0.5rem 0;">Heading 4 (&lt;h4&gt;) - Minor Subsection</h4>
+        </div>
+
+        <!-- Section 3: Text Formatting, Lists & Links -->
+        <div class="card">
+            <h2>3. Text Elements, Lists & Anchors</h2>
+            <p>HTML formatting allows semantic meaning: <strong>&lt;strong&gt; for high importance</strong>, <em>&lt;em&gt; for emphasis</em>, <mark style="background:#fbbf24; color:#0f172a; padding: 0 4px; border-radius: 2px;">&lt;mark&gt; for highlighted text</mark>, and <del>&lt;del&gt; for deleted content</del>.</p>
+            
+            <h3>Unordered List (&lt;ul&gt;):</h3>
+            <ul>
+                <li>Frontend: HTML5, CSS3, JavaScript, React, Next.js</li>
+                <li>Backend: Python, FastAPI, PostgreSQL</li>
+                <li>DevOps: Git, GitHub, Cloud Deployment</li>
+            </ul>
+
+            <h3>Ordered List (&lt;ol&gt;):</h3>
+            <ol>
+                <li>Step 1: Write clean semantic HTML structure.</li>
+                <li>Step 2: Style with modern CSS flexbox and grid.</li>
+                <li>Step 3: Connect with dynamic backend REST APIs.</li>
+            </ol>
+
+            <h3>Hyperlink (&lt;a&gt;):</h3>
+            <p>External link with security attributes: <a href="https://github.com/sfaiz801" target="_blank" rel="noopener noreferrer">Visit GitHub Profile &rarr;</a></p>
+        </div>
+    </div>
+</body>
+</html>
