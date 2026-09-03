@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 01: Bootstrap 5 Grid System, Breakpoints & Containers</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; padding: 2rem 0; }
+        .grid-box {
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid #38bdf8;
+            border-radius: 6px;
+            padding: 0.75rem;
+            text-align: center;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #38bdf8;
+            font-weight: 600;
+        }
+        .grid-box-alt {
+            background: rgba(129, 140, 248, 0.15);
+            border: 1px solid #818cf8;
+            color: #818cf8;
+        }
+        .card-custom {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .breakpoint-badge {
+            font-family: 'Fira Code', monospace;
+            padding: 0.35rem 0.65rem;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="text-center mb-4">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-semibold mb-2">Module 01</span>
+            <h1 class="display-6 fw-bold text-primary">Bootstrap 5 Grid System & Breakpoints</h1>
+            <p class="text-secondary">Understanding 12-column architecture, container widths, responsive column distribution, and gutter control.</p>
+        </div>
+
+        <!-- 1. BREAKPOINTS MATRIX -->
+        <div class="card-custom">
+            <h2 class="h5 text-info mb-3 pb-2 border-bottom border-secondary">1. Responsive Breakpoint Tier Specifications</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-dark table-hover mb-0">
+                    <thead>
+                        <tr class="text-info">
+                            <th>Breakpoint</th>
+                            <th>Class Infix</th>
+                            <th>Dimensions</th>
+                            <th>Container Max-Width</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Extra small</td><td><code>none</code></td><td>&lt;576px</td><td>100%</td></tr>
+                        <tr><td>Small</td><td><code>sm</code></td><td>&ge;576px</td><td>540px</td></tr>
+                        <tr><td>Medium</td><td><code>md</code></td><td>&ge;768px</td><td>720px</td></tr>
+                        <tr><td>Large</td><td><code>lg</code></td><td>&ge;992px</td><td>960px</td></tr>
+                        <tr><td>Extra large</td><td><code>xl</code></td><td>&ge;1200px</td><td>1140px</td></tr>
+                        <tr><td>Extra extra large</td><td><code>xxl</code></td><td>&ge;1400px</td><td>1320px</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 2. 12-COLUMN EQUAL & UNEQUAL DIVISION -->
+        <div class="card-custom">
+            <h2 class="h5 text-info mb-3 pb-2 border-bottom border-secondary">2. 12-Column Responsive Layouts (.row &amp; .col-*)</h2>
+            <p class="text-secondary small">Bootstrap grid is divided into 12 equal vertical slots per row:</p>
+            
+            <!-- 12 Equal Columns -->
+            <div class="row g-2 mb-3">
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+                <div class="col-1"><div class="grid-box">1</div></div>
+            </div>
+
+            <!-- Proportional Splits -->
+            <div class="row g-2 mb-3">
+                <div class="col-md-6 col-12"><div class="grid-box grid-box-alt">col-md-6 (50% on Desktop / 100% on Mobile)</div></div>
+                <div class="col-md-6 col-12"><div class="grid-box grid-box-alt">col-md-6 (50% on Desktop / 100% on Mobile)</div></div>
+            </div>
+
+            <div class="row g-2 mb-3">
+                <div class="col-lg-8 col-md-7 col-12"><div class="grid-box">col-lg-8 col-md-7 (Main Content)</div></div>
+                <div class="col-lg-4 col-md-5 col-12"><div class="grid-box grid-box-alt">col-lg-4 col-md-5 (Sidebar)</div></div>
+            </div>
+
+            <div class="row g-2">
+                <div class="col-md-4 col-sm-6"><div class="grid-box">col-md-4 col-sm-6</div></div>
+                <div class="col-md-4 col-sm-6"><div class="grid-box">col-md-4 col-sm-6</div></div>
+                <div class="col-md-4 col-12"><div class="grid-box">col-md-4 col-12</div></div>
+            </div>
+        </div>
+
+        <!-- 3. OFFSETS, AUTO COLUMNS & GUTTERS -->
+        <div class="card-custom">
+            <h2 class="h5 text-info mb-3 pb-2 border-bottom border-secondary">3. Offsets, Auto-Layout &amp; Gutters (.offset-*, .col-auto, .g-*)</h2>
+            <div class="row g-3">
+                <div class="col-md-4 offset-md-4"><div class="grid-box grid-box-alt">col-md-4 offset-md-4 (Centered Auth Box)</div></div>
+            </div>
+            <div class="row g-3 mt-1">
+                <div class="col-auto"><div class="grid-box">col-auto (Fitted to content)</div></div>
+                <div class="col"><div class="grid-box">col (Auto-fills remaining space)</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

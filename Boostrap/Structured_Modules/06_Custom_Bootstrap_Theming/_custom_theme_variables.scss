@@ -1,0 +1,27 @@
+// _custom_theme_variables.scss
+// Overriding Bootstrap 5 Sass Defaults to create a custom brand theme
+
+// 1. Brand Color Overrides
+$primary: #38bdf8 !default;
+$secondary: #818cf8 !default;
+$success: #22c55e !default;
+$info: #06b6d4 !default;
+$warning: #f59e0b !default;
+$danger: #f43f5e !default;
+
+// 2. Body & Background Colors
+$body-bg: #090d16 !default;
+$body-color: #f8fafc !default;
+
+// 3. UI Component Geometry
+$border-radius: 0.75rem !default;
+$border-radius-sm: 0.5rem !default;
+$border-radius-lg: 1rem !default;
+
+// 4. Feature Flags
+$enable-gradients: true !default;
+$enable-shadows: true !default;
+$enable-rounded: true !default;
+
+// 5. Import Core Bootstrap SCSS
+// @import "bootstrap/scss/bootstrap";

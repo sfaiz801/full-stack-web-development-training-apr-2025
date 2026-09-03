@@ -1,0 +1,12 @@
+// _functions.scss
+// SCSS Mathematical and Utility Functions
+
+// Function converting pixel values to rem units
+@function rem($pixels, $context: 16) {
+  @return ($pixels / $context) * 1rem;
+}
+
+// Function to calculate complementary tint
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}

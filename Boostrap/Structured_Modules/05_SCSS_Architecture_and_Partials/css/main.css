@@ -1,0 +1,98 @@
+/* Compiled from SCSS source files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 2rem 1rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+/* @extend %elevation-card */
+.course-card {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #334155;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(56, 189, 248, 0.25);
+}
+
+/* Nesting: Header */
+.course-card__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.course-card__header .title {
+  font-size: 1.25rem;
+  color: #38bdf8;
+  font-weight: 700;
+  margin: 0;
+}
+
+.course-card__header .badge {
+  background: rgba(192, 132, 252, 0.2);
+  color: #c084fc;
+  padding: 0.25rem 0.625rem;
+  border-radius: 1.25rem;
+  font-size: 0.75rem;
+  font-family: "Fira Code", monospace;
+}
+
+/* Nesting: Body */
+.course-card__body {
+  color: #94a3b8;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.course-card__body p {
+  margin-bottom: 1rem;
+}
+
+/* @extend %interactive-button */
+.course-card .btn-action {
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  color: #0f172a;
+  border: none;
+}
+
+.course-card .btn-action:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+.course-card .btn-action:active {
+  transform: scale(0.98);
+}

@@ -78,7 +78,17 @@ full-stack-web-development-training-apr-2024/
   11. `11_CSS_Animations_and_Modern_Styling`: `@keyframes` animations, 3D hover transforms, and Glassmorphism blur.
 * 15 standalone interactive UI projects (Glassmorphism Clock, Neumorphic Calculator, SaaS Pricing, etc.).
 
-### 4. 🐍 [Python](file:///d:/full-stack-web-development-training-apr-2024/Python)
+### 4. 🅱️ [Bootstrap & SCSS](file:///d:/full-stack-web-development-training-apr-2024/Boostrap)
+* **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/Boostrap/Structured_Modules)**: Comprehensive student learning journey across 6 core modules:
+  1. `01_Bootstrap_Grid_and_Breakpoints`: 12-column responsive grid system, containers, breakpoint tiers (sm, md, lg, xl, xxl), offsets, and auto-columns.
+  2. `02_Bootstrap_Components_and_Navigation`: Responsive mobile-toggle Navbar, dropdowns, Nav pills, breadcrumb navigation, and accordions.
+  3. `03_Bootstrap_Cards_and_Modals`: Responsive Card grids (`row-cols-md-3`), action footers, vertically centered dialog modals, and static backdrops.
+  4. `04_Bootstrap_Forms_and_Utilities`: Floating labels, input groups with addons, custom switches, and live validation (`was-validated`).
+  5. `05_SCSS_Architecture_and_Partials`: Modular Sass architecture: `_variables.scss`, `_functions.scss` (`rem()`), `_mixins.scss`, `_placeholders.scss` (`@extend`), and compiled CSS.
+  6. `06_Custom_Bootstrap_Theming`: Overriding default Bootstrap Sass maps and CSS custom properties (`--bs-primary`, `--bs-border-radius`) for custom brand identity.
+* 5 complete standalone web apps (Admin Dashboard Layout, E-commerce Product Page, SaaS Pricing Table, Interactive Auth Form, Portfolio Landing Page).
+
+### 5. 🐍 [Python](file:///d:/full-stack-web-development-training-apr-2024/Python)
 * **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules)**: Comprehensive student learning journey across 9 core modules:
   1. `01_Fundamentals_Variables_DataTypes`: Dynamic typing, primitive data types, typecasting, f-strings.
   2. `02_Operators`: Arithmetic, relational, logical, identity (`is`), membership (`in`), bitwise.
@@ -92,7 +102,7 @@ full-stack-web-development-training-apr-2024/
 * **[restaurant](file:///d:/full-stack-web-development-training-apr-2024/Python/restaurant)**: Red Heaven Restaurant Management System with multi-role access control (Admin, Staff, Customer), order management, billing, and reservation booking.
 * **[Tasks](file:///d:/full-stack-web-development-training-apr-2024/Python/Tasks)**: 25 modular Python programs ranging from Student & Bank Management Systems, ATM Simulators, and Hotel/Medical Billing to Interactive Games and File Analyzers.
 
-### 5. ⚡ [API, Database & Cloud](file:///d:/full-stack-web-development-training-apr-2024/API%2CDatabase%20&%20Cloud)
+### 6. ⚡ [API, Database & Cloud](file:///d:/full-stack-web-development-training-apr-2024/API%2CDatabase%20&%20Cloud)
 * **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/API%2CDatabase%20&%20Cloud/Structured_Modules)**: Comprehensive student learning journey across 6 core modules:
   1. `01_API_Fundamentals_and_HTTP`: HTTP verbs (GET, POST, PUT, PATCH, DELETE), status codes (200, 201, 204, 404, 422), and REST architectural constraints.
   2. `02_FastAPI_Request_Validation`: Pydantic v2 schemas, `Field` boundaries, custom `@field_validator`, and automatic HTTP 422 handling.
@@ -104,7 +114,7 @@ full-stack-web-development-training-apr-2024/
 * **`Database/`**: Production SQL schema (`01_schema.sql`), seed data (`02_sample_data.sql`), and advanced queries/stored procedures for PostgreSQL, MySQL, and AWS RDS.
 * **`Cloud/`**: Firebase Authentication setup and token verification guide connecting React/Next.js frontend with FastAPI backend.
 
-### 6. 💻 [C Language](file:///d:/full-stack-web-development-training-apr-2024/C%20Language)
+### 7. 💻 [C Language](file:///d:/full-stack-web-development-training-apr-2024/C%20Language)
 * **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/C%20Language/Structured_Modules)**: Progressive curriculum mapping each student's journey:
   1. `01_Fundamentals_Variables_DataTypes`: Basic syntax, primitive data types, input/output (`printf`/`scanf`), constants & typecasting.
   2. `02_Operators`: Arithmetic, relational, logical, bitwise operations (`&`, `|`, `^`, shifts), and ternary operators.
@@ -147,4 +157,3 @@ npm run dev
 - [x] **Data Persistence & Queries**: Structuring SQL schemas, indexing, running optimized queries, and writing stored procedures.
 - [x] **Authentication & Security**: Implementing secure REST APIs with token validation, input schemas, and error handling.
 - [x] **Cloud Readiness**: Deploying and scaling web applications in AWS cloud environments.
->>>>>>> 161f1dc (feat: complete full stack curriculum with bootstrap, api tasks, sql, and firebase auth)
