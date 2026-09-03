@@ -67,8 +67,18 @@ full-stack-web-development-training-apr-2024/
 * 15 standalone interactive UI widgets including Glassmorphism Digital Clocks, Neumorphic Calculators, SaaS Pricing Tables, Animated Auth Modals, Crypto Trackers, and E-commerce product cards.
 
 ### 4. 🐍 [Python](file:///d:/full-stack-web-development-training-apr-2024/Python)
+* **[Structured Modules](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules)**: Comprehensive student learning journey across 9 core modules:
+  1. `01_Fundamentals_Variables_DataTypes`: Dynamic typing, primitive data types, typecasting, f-strings.
+  2. `02_Operators`: Arithmetic, relational, logical, identity (`is`), membership (`in`), bitwise.
+  3. `03_Control_Structures`: `if-elif-else` ladders, ternary, `for`/`while` loops, `enumerate()`, `zip()`.
+  4. `04_Functions`: Type hints, `*args`, `**kwargs`, lambda functions, functional tools (`map`, `filter`), scopes.
+  5. `05_Data_Structures`: Lists (comprehensions), Tuples (unpacking), Sets (union/intersection), Dictionaries (`.items()`).
+  6. `06_Object_Oriented_Programming`: Classes, `__init__`, inheritance, polymorphism, encapsulation, abstraction (`abc.ABC`).
+  7. `07_Exception_Handling`: `try`/`except`/`finally`, custom user-defined exceptions with `raise`.
+  8. `08_File_Handling`: Context managers (`with open`), text I/O, JSON serialization & deserialization (`json.dump`/`json.load`).
+  9. `09_Modules_and_Packages`: Standard library modules, custom package creation (`utility_pkg/__init__.py`), imports.
 * **[restaurant](file:///d:/full-stack-web-development-training-apr-2024/Python/restaurant)**: Red Heaven Restaurant Management System with multi-role access control (Admin, Staff, Customer), order management, billing, and reservation booking.
-* 25 modular Python programs ranging from Student & Bank Management Systems, ATM Simulators, and Hotel/Medical Billing to Interactive Games and File Analyzers.
+* **[Tasks](file:///d:/full-stack-web-development-training-apr-2024/Python/Tasks)**: 25 modular Python programs ranging from Student & Bank Management Systems, ATM Simulators, and Hotel/Medical Billing to Interactive Games and File Analyzers.
 
 ### 5. ⚡ [API, Database & Cloud](file:///d:/full-stack-web-development-training-apr-2024/API%2CDatabase%20&%20Cloud)
 * **`API/`**: Production-ready FastAPI repository (`backend-training-indixpert-faiz`) on branch `faiz` with profile routes, JWT & Firebase token verification.

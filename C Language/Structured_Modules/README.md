@@ -1,3 +1,4 @@
+
 # 🎓 C Programming: Student Learning Journey
 
 This structured curriculum presents the complete progressive path of learning C programming—from core fundamentals, variables, and operators up to control flow, modular functions, arrays, and string algorithms.

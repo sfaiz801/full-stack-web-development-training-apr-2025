@@ -1,6 +1,22 @@
 # 🐍 Python Practice & Project Repository
 
-Yeh folder Python practice aur real-world mini projects ke liye banaya gaya hai. Isme major capstone project aur beginner se intermediate level ke 25 essential interactive console projects hain.
+This folder contains a complete, progressive Python curriculum mapping each student's journey from fundamentals, variables, and operators up to OOP, exceptions, file handling, modules, and packages, alongside real-world projects and tasks.
+
+---
+
+## 🌟 Structured Student Learning Curriculum: [`Structured_Modules/`](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules)
+
+| Module | Directory | Topics Covered | Key Scripts |
+|--------|-----------|----------------|-------------|
+| **1** | [`01_Fundamentals_Variables_DataTypes`](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules/01_Fundamentals_Variables_DataTypes) | Primitive types (`int`, `float`, `str`, `bool`, `None`), `type()`, `id()`, typecasting, f-strings | `01_basics_and_datatypes.py`, `02_type_casting_and_fstrings.py` |
+| **2** | [`02_Operators`](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules/02_Operators) | Arithmetic, floor division (`//`), exponent (`**`), comparisons, logical, identity (`is`), membership (`in`), bitwise | `01_arithmetic_relational_logical.py`, `02_identity_membership_bitwise.py` |
+| **3** | [`03_Control_Structures`](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules/03_Control_Structures) | Decision ladders (`if-elif-else`), ternary, `for` with `range()`, `while`, `break`/`continue`, `enumerate()`, `zip()` | `01_conditionals_if_elif_else.py`, `02_loops_and_iteration.py` |
+| **4** | [`04_Functions`](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules/04_Functions) | Type hints, `*args`, `**kwargs`, anonymous `lambda`, `map()`, `filter()`, scopes (`global`, `nonlocal`) | `01_function_basics_and_args.py`, `02_lambdas_and_scope.py` |
+| **5** | [`05_Data_Structures`](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules/05_Data_Structures) | Lists (comprehensions, slicing), Tuples (unpacking), Sets (union, intersection), Dictionaries (methods, `.items()`) | `01_lists_and_comprehensions.py`, `02_tuples_and_unpacking.py`, `03_sets_and_operations.py`, `04_dictionaries_and_methods.py` |
+| **6** | [`06_Object_Oriented_Programming`](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules/06_Object_Oriented_Programming) | Classes, objects, `__init__`, `@classmethod`, `@staticmethod`, Inheritance, Polymorphism, Encapsulation & Abstraction | `01_classes_objects_attributes.py`, `02_inheritance_and_polymorphism.py`, `03_encapsulation_and_abstraction.py` |
+| **7** | [`07_Exception_Handling`](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules/07_Exception_Handling) | `try`, `except`, `else`, `finally`, handling specific exceptions, custom user-defined exceptions with `raise` | `01_try_except_finally.py`, `02_custom_exceptions.py` |
+| **8** | [`08_File_Handling`](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules/08_File_Handling) | Context managers (`with open`), read/write/append modes, JSON serialization/deserialization (`json.dump`, `json.load`) | `01_text_file_io.py`, `02_json_data_persistence.py` |
+| **9** | [`09_Modules_and_Packages`](file:///d:/full-stack-web-development-training-apr-2024/Python/Structured_Modules/09_Modules_and_Packages) | Standard library modules (`math`, `datetime`, `random`), custom package creation (`utility_pkg/__init__.py`), imports | `utility_pkg/`, `main_runner.py` |
 
 ---
 
